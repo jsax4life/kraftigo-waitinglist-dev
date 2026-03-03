@@ -61,8 +61,8 @@ const Hero = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         Kraftigö connects you with verified Krafters (service providers) like
-        electricians, cleaners, plumbers, painters and more. Compare
-        prizes, request quotes, and book confidently.
+        electricians, cleaners, plumbers, painters and more. Compare prizes,
+        request quotes, and book confidently.
       </motion.p>
       <motion.div
         className="flex items-center gap-3 mt-4 relative z-10"
@@ -100,8 +100,9 @@ const Hero = () => {
           <br /> to beta in <span className="text-[#FF6600]">4 countries</span>
         </p>
       </motion.div>
-      <motion.button
-        className="text-base md:text-[18.24px] text-white bg-[#FF6600] border-7 border-[#f9f9f9de] rounded-2xl px-8 md:px-[60.69px] py-3 md:py-[18.35px] mt-6 hover:scale-105 transition-transform duration-300 hover:bg-[#ff6600cc] cursor-pointer relative z-10"
+      <motion.a
+        href="#waitlist"
+        className="text-base md:text-[18.24px] text-white bg-[#FF6600] border-7 border-[#f9f9f9de] rounded-2xl px-8 md:px-[60.69px] py-3 md:py-[18.35px] mt-6 hover:scale-105 transition-transform duration-300 hover:bg-[#ff6600cc] cursor-pointer relative z-10 inline-block"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
@@ -109,7 +110,7 @@ const Hero = () => {
         whileTap={{ scale: 0.95 }}
       >
         Join waitlist
-      </motion.button>
+      </motion.a>
 
       <motion.div
         className="relative z-10 w-full max-w-4xl"
@@ -117,7 +118,11 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
       >
-        <img src="/hero.svg" alt="Hero" className="w-full h-auto mt-8 md:mt-16" />
+        <img
+          src="/hero.svg"
+          alt="Hero"
+          className="w-full h-auto mt-8 md:mt-16"
+        />
       </motion.div>
     </div>
   );
