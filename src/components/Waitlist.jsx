@@ -1,16 +1,65 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Waitlist = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    country: "",
+    country: "germany",
     city: "",
     role: "",
     serviceInterest: "",
     agreeToContact: false,
   });
+
+  const [cities, setCities] = useState([]);
+  const [loadingCities, setLoadingCities] = useState(false);
+
+  // Fetch German cities when component mounts
+  useEffect(() => {
+    fetchGermanCities();
+  }, []);
+
+  const fetchGermanCities = async () => {
+    setLoadingCities(true);
+    try {
+      // Using CountriesNow API to get German cities
+      const response = await fetch('https://countriesnow.space/api/v0.1/countries/cities', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          country: 'germany'
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (data.error === false && data.data) {
+        // Sort cities alphabetically and take major cities
+        const sortedCities = data.data.sort();
+        setCities(sortedCities);
+      } else {
+        // Fallback to major German cities if API fails
+        setCities([
+          'Berlin', 'Munich', 'Hamburg', 'Cologne', 'Frankfurt', 
+          'Stuttgart', 'Düsseldorf', 'Dortmund', 'Essen', 'Leipzig',
+          'Bremen', 'Dresden', 'Hanover', 'Nuremberg', 'Duisburg'
+        ]);
+      }
+    } catch (error) {
+      console.error('Error fetching cities:', error);
+      // Fallback to major German cities
+      setCities([
+        'Berlin', 'Munich', 'Hamburg', 'Cologne', 'Frankfurt', 
+        'Stuttgart', 'Düsseldorf', 'Dortmund', 'Essen', 'Leipzig',
+        'Bremen', 'Dresden', 'Hanover', 'Nuremberg', 'Duisburg'
+      ]);
+    } finally {
+      setLoadingCities(false);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -134,10 +183,9 @@ const Waitlist = () => {
                     name="country"
                     value={formData.country}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-[#0000001A] focus:outline-none focus:border-[#FF6600] appearance-none"
+                    className="w-full px-4 py-3 rounded-lg border border-[#0000001A] focus:outline-none focus:border-[#FF6600] appearance-none "
                     required
                   >
-                    <option value="">Select a country</option>
                     <option value="germany">🇩🇪 Germany</option>
                     <option value="usa">🇺🇸 United States</option>
                     <option value="uk">🇬🇧 United Kingdom</option>
@@ -160,13 +208,18 @@ const Waitlist = () => {
                     name="city"
                     value={formData.city}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-[#0000001A] focus:outline-none focus:border-[#FF6600]  appearance-none"
+                    className="w-full px-4 py-3 rounded-lg border border-[#0000001A] focus:outline-none focus:border-[#FF6600] appearance-none "
                     required
+                    disabled={loadingCities}
                   >
-                    <option value="">Select a city</option>
-                    <option value="berlin">Berlin</option>
-                    <option value="munich">Munich</option>
-                    <option value="hamburg">Hamburg</option>
+                    <option value="">
+                      {loadingCities ? 'Loading cities...' : 'Select a city'}
+                    </option>
+                    {cities.map((city) => (
+                      <option key={city} value={city.toLowerCase()}>
+                        {city}
+                      </option>
+                    ))}
                   </select>
                   <img
                     src="/chevron.svg"
