@@ -122,6 +122,11 @@ const Hero = () => {
           src="/hero.svg"
           alt="Hero"
           className="w-full h-auto mt-8 md:mt-16"
+          width={1322}
+          height={772}
+          decoding="async"
+          loading="lazy"
+          style={{ imageRendering: "-webkit-optimize-contrast" }}
         />
       </motion.div>
     </div>
