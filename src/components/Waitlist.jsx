@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { joinWaitlist } from "../lib/api/waitlist";
 
 const Waitlist = () => {
   const [formData, setFormData] = useState({
@@ -24,18 +25,21 @@ const Waitlist = () => {
     setLoadingCities(true);
     try {
       // Using CountriesNow API to get German cities
-      const response = await fetch('https://countriesnow.space/api/v0.1/countries/cities', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        "https://countriesnow.space/api/v0.1/countries/cities",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            country: "germany",
+          }),
         },
-        body: JSON.stringify({
-          country: 'germany'
-        })
-      });
-      
+      );
+
       const data = await response.json();
-      
+
       if (data.error === false && data.data) {
         // Sort cities alphabetically and take major cities
         const sortedCities = data.data.sort();
@@ -43,28 +47,85 @@ const Waitlist = () => {
       } else {
         // Fallback to major German cities if API fails
         setCities([
-          'Berlin', 'Munich', 'Hamburg', 'Cologne', 'Frankfurt', 
-          'Stuttgart', 'Düsseldorf', 'Dortmund', 'Essen', 'Leipzig',
-          'Bremen', 'Dresden', 'Hanover', 'Nuremberg', 'Duisburg'
+          "Berlin",
+          "Munich",
+          "Hamburg",
+          "Cologne",
+          "Frankfurt",
+          "Stuttgart",
+          "Düsseldorf",
+          "Dortmund",
+          "Essen",
+          "Leipzig",
+          "Bremen",
+          "Dresden",
+          "Hanover",
+          "Nuremberg",
+          "Duisburg",
         ]);
       }
     } catch (error) {
-      console.error('Error fetching cities:', error);
+      console.error("Error fetching cities:", error);
       // Fallback to major German cities
       setCities([
-        'Berlin', 'Munich', 'Hamburg', 'Cologne', 'Frankfurt', 
-        'Stuttgart', 'Düsseldorf', 'Dortmund', 'Essen', 'Leipzig',
-        'Bremen', 'Dresden', 'Hanover', 'Nuremberg', 'Duisburg'
+        "Berlin",
+        "Munich",
+        "Hamburg",
+        "Cologne",
+        "Frankfurt",
+        "Stuttgart",
+        "Düsseldorf",
+        "Dortmund",
+        "Essen",
+        "Leipzig",
+        "Bremen",
+        "Dresden",
+        "Hanover",
+        "Nuremberg",
+        "Duisburg",
       ]);
     } finally {
       setLoadingCities(false);
     }
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const apiData = {
+        fullname: formData.fullName,
+        email: formData.email,
+        country: formData.country,
+        city: formData.city,
+        role: formData.role,
+        serviceInterest: formData.serviceInterest,
+        agreesToContact: formData.agreeToContact,
+      };
+
+      await joinWaitlist(apiData);
+      setSubmitStatus("success");
+      // Reset form on success
+      setFormData({
+        fullName: "",
+        email: "",
+        country: "germany",
+        city: "",
+        role: "",
+        serviceInterest: "",
+        agreeToContact: false,
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -187,9 +248,6 @@ const Waitlist = () => {
                     required
                   >
                     <option value="germany">🇩🇪 Germany</option>
-                    <option value="usa">🇺🇸 United States</option>
-                    <option value="uk">🇬🇧 United Kingdom</option>
-                    <option value="nigeria">🇳🇬 Nigeria</option>
                   </select>
                   <img
                     src="/chevron.svg"
@@ -213,7 +271,7 @@ const Waitlist = () => {
                     disabled={loadingCities}
                   >
                     <option value="">
-                      {loadingCities ? 'Loading cities...' : 'Select a city'}
+                      {loadingCities ? "Loading cities..." : "Select a city"}
                     </option>
                     {cities.map((city) => (
                       <option key={city} value={city.toLowerCase()}>
@@ -316,6 +374,17 @@ const Waitlist = () => {
               </label>
             </div>
 
+            {submitStatus === "success" && (
+              <p className="text-green-600 text-sm font-semibold pt-2 text-right">
+                ✓ Successfully joined! We'll be in touch soon.
+              </p>
+            )}
+            {submitStatus === "error" && (
+              <p className="text-red-600 text-sm font-semibold pt-2 text-right">
+                ✕ Failed to join. Please try again later.
+              </p>
+            )}
+
             <div className="flex justify-end gap-4 pt-4">
               <button
                 type="button"
@@ -325,9 +394,10 @@ const Waitlist = () => {
               </button>
               <button
                 type="submit"
-                className="px-8 py-3 rounded-xl bg-[#FF6600] text-white font-semibold hover:bg-[#ff6600cc] transition-colors"
+                disabled={isSubmitting}
+                className="px-8 py-3 rounded-xl bg-[#FF6600] text-white font-semibold hover:bg-[#ff6600cc] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Done
+                {isSubmitting ? "Joining..." : "Done"}
               </button>
             </div>
           </form>

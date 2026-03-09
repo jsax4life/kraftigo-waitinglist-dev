@@ -4,6 +4,58 @@ import { motion } from "framer-motion";
 const HowItWorks = () => {
   const [activeTab, setActiveTab] = useState("client");
 
+  const tabContent = {
+    client: {
+      steps: [
+        {
+          id: 1,
+          title: "Search A Service",
+          description: "Search for any service you need help with.",
+          bgColor: "bg-[#FFF0E5]",
+        },
+        {
+          id: 2,
+          title: "Compare Nearby Krafters",
+          description:
+            "Compare distance, ratings, availability, price range, and trust signals.",
+          bgColor: "bg-[#FFF0E5]",
+        },
+        {
+          id: 3,
+          title: "Request A Quote Or Book",
+          description: "Chat, confirm scope, then book a time slot.",
+          bgColor: "bg-[#E5E5FF]",
+        },
+      ],
+      image: "/how.svg",
+    },
+    krafter: {
+      steps: [
+        {
+          id: 1,
+          title: "Sign up as a krafter and add your skills ",
+          description: "Search for any service you need help with.",
+          bgColor: "bg-[#E5E5FF]",
+        },
+        {
+          id: 2,
+          title:
+            "Find available krafts from marketplace or  get booked directly ",
+          description:
+            "Compare distance, ratings, availability, price range, and trust signals.",
+          bgColor: "bg-[#E5E5FF]",
+        },
+        {
+          id: 3,
+          title: "Get paid when you fulfill orders",
+          description: "Chat, confirm scope, then book a time slot.",
+          bgColor: "bg-[#FFF0E5]",
+        },
+      ],
+      image: "/how2.svg",
+    },
+  };
+
   return (
     <section className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-16 relative ">
       <motion.div
@@ -21,7 +73,7 @@ const HowItWorks = () => {
         </p>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-6 md:gap-8 mb-8 md:mb-12">
+        <div className="flex justify-center gap-6 md:gap-8 mb-8 md:mb-12 relative z-20">
           <button
             onClick={() => setActiveTab("client")}
             className={`text-base md:text-lg font-semibold pb-2 transition-colors relative ${
@@ -58,57 +110,36 @@ const HowItWorks = () => {
       </motion.div>
 
       <div className="flex justify-center items-center relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center max-w-5xl w-full">
+        <motion.div
+          key={activeTab}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center max-w-5xl w-full"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.5 }}
+        >
           {/* Left Side - Steps */}
           <div className="space-y-4">
-            <motion.div
-              className="bg-[#FFF5F0] rounded-2xl p-4"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className="text-2xl font-bold text-[#000000CC] mb-3">1</div>
-              <h3 className="text-base md:text-lg font-bold text-[#000000CC]">
-                Search A Service
-              </h3>
-              <p className="text-sm md:text-base text-gray-600">
-                Search for any service you need help with.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="bg-[#E8E8FF] rounded-2xl p-4"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="text-2xl font-bold text-[#000000CC] mb-3">2</div>
-              <h3 className="text-base md:text-lg font-bold text-[#000000CC]">
-                Compare Nearby Krafters
-              </h3>
-              <p className="text-sm md:text-base text-gray-600">
-                Compare distance, ratings, availability, price range, and trust
-                signals.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="bg-[#F0FFE8] rounded-2xl p-4"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <div className="text-2xl font-bold text-[#000000CC] mb-3">3</div>
-              <h3 className="text-base md:text-lg font-bold text-[#000000CC]">
-                Request A Quote Or Book
-              </h3>
-              <p className="text-sm md:text-base text-gray-600">
-                Chat, confirm scope, then book a time slot.
-              </p>
-            </motion.div>
+            {tabContent[activeTab].steps.map((step, index) => (
+              <motion.div
+                key={step.id}
+                className={`${step.bgColor} rounded-2xl p-4`}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="text-2xl font-bold text-[#000000CC] mb-3">
+                  {step.id}
+                </div>
+                <h3 className="text-base md:text-lg font-bold text-[#000000CC]">
+                  {step.title}
+                </h3>
+                <p className="text-sm md:text-base text-gray-600">
+                  {step.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
 
           {/* Right Side - Phone Mockup */}
@@ -120,12 +151,12 @@ const HowItWorks = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <img
-              src="/how.svg"
+              src={tabContent[activeTab].image}
               alt=""
-              className="w-full max-w-4xl hidden md:block -mt-40 "
+              className="w-full max-w-4xl hidden md:block md:-mt-20 object-contain max-h-[500px]"
             />
           </motion.div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Orange blob decoration at bottom */}
