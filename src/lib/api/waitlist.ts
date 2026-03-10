@@ -12,7 +12,7 @@ export interface WaitlistData {
 
 export const joinWaitlist = async (data: WaitlistData) => {
   try {
-    const response = await api.post("/waitlist", data);
+    const response = await api.post("/api/waitlist", data);
     return response.data;
   } catch (error) {
     console.error("Error joining waitlist:", error);
