@@ -7,26 +7,26 @@ const Waitlist = () => {
     fullName: "",
     email: "",
     country: "germany",
-    city: "",
+    state: "",
     role: "",
     serviceInterest: "",
     agreeToContact: false,
   });
 
-  const [cities, setCities] = useState([]);
-  const [loadingCities, setLoadingCities] = useState(false);
+  const [states, setStates] = useState([]);
+  const [loadingStates, setLoadingStates] = useState(false);
 
-  // Fetch German cities when component mounts
+  // Fetch German states when component mounts
   useEffect(() => {
-    fetchGermanCities();
+    fetchGermanStates();
   }, []);
 
-  const fetchGermanCities = async () => {
-    setLoadingCities(true);
+  const fetchGermanStates = async () => {
+    setLoadingStates(true);
     try {
-      // Using CountriesNow API to get German cities
+      // Using CountriesNow API to get German states
       const response = await fetch(
-        "https://countriesnow.space/api/v0.1/countries/cities",
+        "https://countriesnow.space/api/v0.1/countries/states",
         {
           method: "POST",
           headers: {
@@ -40,52 +40,56 @@ const Waitlist = () => {
 
       const data = await response.json();
 
-      if (data.error === false && data.data) {
-        // Sort cities alphabetically and take major cities
-        const sortedCities = data.data.sort();
-        setCities(sortedCities);
+      if (data.error === false && data.data && data.data.states) {
+        // Sort states alphabetically
+        const sortedStates = data.data.states
+          .map((s) => s.name)
+          .sort((a, b) => a.localeCompare(b));
+        setStates(sortedStates);
       } else {
-        // Fallback to major German cities if API fails
-        setCities([
+        // Fallback to German states if API fails
+        setStates([
+          "Baden-Württemberg",
+          "Bavaria",
           "Berlin",
-          "Munich",
-          "Hamburg",
-          "Cologne",
-          "Frankfurt",
-          "Stuttgart",
-          "Düsseldorf",
-          "Dortmund",
-          "Essen",
-          "Leipzig",
+          "Brandenburg",
           "Bremen",
-          "Dresden",
-          "Hanover",
-          "Nuremberg",
-          "Duisburg",
+          "Hamburg",
+          "Hesse",
+          "Lower Saxony",
+          "Mecklenburg-Vorpommern",
+          "North Rhine-Westphalia",
+          "Rhineland-Palatinate",
+          "Saarland",
+          "Saxony",
+          "Saxony-Anhalt",
+          "Schleswig-Holstein",
+          "Thuringia",
         ]);
       }
     } catch (error) {
-      console.error("Error fetching cities:", error);
-      // Fallback to major German cities
-      setCities([
+      console.error("Error fetching states:", error);
+      // Fallback to German states
+      setStates([
+        "Baden-Württemberg",
+        "Bavaria",
         "Berlin",
-        "Munich",
-        "Hamburg",
-        "Cologne",
-        "Frankfurt",
-        "Stuttgart",
-        "Düsseldorf",
-        "Dortmund",
-        "Essen",
-        "Leipzig",
+        "Brandenburg",
         "Bremen",
-        "Dresden",
-        "Hanover",
-        "Nuremberg",
-        "Duisburg",
+        "Hamburg",
+        "Hesse",
+        "Lower Saxony",
+        "Mecklenburg-Vorpommern",
+        "North Rhine-Westphalia",
+        "Rhineland-Palatinate",
+        "Saarland",
+        "Saxony",
+        "Saxony-Anhalt",
+        "Schleswig-Holstein",
+        "Thuringia",
       ]);
     } finally {
-      setLoadingCities(false);
+      setLoadingStates(false);
     }
   };
 
@@ -102,7 +106,7 @@ const Waitlist = () => {
         fullname: formData.fullName,
         email: formData.email,
         country: formData.country,
-        city: formData.city,
+        city: formData.state,
         role: formData.role,
         serviceInterest: formData.serviceInterest,
         agreesToContact: formData.agreeToContact,
@@ -115,7 +119,7 @@ const Waitlist = () => {
         fullName: "",
         email: "",
         country: "germany",
-        city: "",
+        state: "",
         role: "",
         serviceInterest: "",
         agreeToContact: false,
@@ -192,7 +196,7 @@ const Waitlist = () => {
             </div>
 
             <p className="text-gray-600 mb-8">
-              Get notified when Kraftigö opens in your city.
+              Get notified when Kraftigö opens in your state.
               <br />
               Early users help shape the MVP.
             </p>
@@ -259,23 +263,23 @@ const Waitlist = () => {
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  City
+                  State
                 </label>
                 <div className="relative">
                   <select
-                    name="city"
-                    value={formData.city}
+                    name="state"
+                    value={formData.state}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-[#0000001A] focus:outline-none focus:border-[#FF6600] appearance-none "
                     required
-                    disabled={loadingCities}
+                    disabled={loadingStates}
                   >
                     <option value="">
-                      {loadingCities ? "Loading cities..." : "Select a city"}
+                      {loadingStates ? "Loading states..." : "Select a state"}
                     </option>
-                    {cities.map((city) => (
-                      <option key={city} value={city.toLowerCase()}>
-                        {city}
+                    {states.map((state) => (
+                      <option key={state} value={state.toLowerCase()}>
+                        {state}
                       </option>
                     ))}
                   </select>

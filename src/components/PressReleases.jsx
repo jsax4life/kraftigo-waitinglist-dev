@@ -3,17 +3,17 @@ import { motion } from "framer-motion";
 const PressReleases = () => {
   const articles = [
     {
-      title: "Kraftigo Secures 600 Registrations On Waitlist",
+      title: "Why We Started Kraftigo",
       description:
-        "Need Ideas For Family Activities In NYC This Fall? Here's A Guide To The Best Broadway Shows And Musicals To See This Autumn.",
-      image: "/images/press1.png",
-      link: "#",
+        "Finding a reliable local artisan should be simple, But in many places, it isn’t. We created Kraftigo to connect you with the best local artisans in your area.",
+      image: "/images/press2.jpg",
+      link: "https://medium.com/@kraftigo2025/why-we-started-kraftig%C3%B6-2df6524f3505",
     },
     {
-      title: "Kraftigo Set To Launch In 4 Countries",
+      title: "Kraftigo  Ready To Secures 600+ Registrations On Waitlist",
       description:
-        "Need Ideas For Family Activities In NYC This Fall? Here's A Guide To The Best Broadway Shows And Musicals To See This Autumn.",
-      image: "/images/press2.jpg",
+        "We're excited to announce that Kraftigo is now available for pre-registration! Join our waitlist to be among the first to experience the future.",
+      image: "/images/press1.png",
       link: "#",
     },
   ];
@@ -58,6 +58,7 @@ const PressReleases = () => {
               <a
                 href={article.link}
                 className="inline-block text-sm font-semibold underline"
+                target="_blank"
               >
                 Read Article
               </a>
