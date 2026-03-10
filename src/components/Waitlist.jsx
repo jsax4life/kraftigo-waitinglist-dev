@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { joinWaitlist } from "../lib/api/waitlist";
+import { joinWaitlist, getAllServices } from "../lib/api/waitlist";
 
 const Waitlist = () => {
   const [formData, setFormData] = useState({
@@ -14,12 +14,50 @@ const Waitlist = () => {
   });
 
   const [states, setStates] = useState([]);
+  const [services, setServices] = useState([
+    "Electrician",
+    "Plumber",
+    "Cleaner",
+    "Painter",
+    "Carpenter",
+  ]);
   const [loadingStates, setLoadingStates] = useState(false);
+  const [loadingServices, setLoadingServices] = useState(false);
 
   // Fetch German states when component mounts
   useEffect(() => {
     fetchGermanStates();
+    fetchServices();
   }, []);
+
+  const fetchServices = async () => {
+    setLoadingServices(true);
+    try {
+      const data = await getAllServices();
+
+      let servicesList = [];
+
+      // Handle different possible response structures
+      if (Array.isArray(data)) {
+        servicesList = data;
+      } else if (data && Array.isArray(data.services)) {
+        servicesList = data.services;
+      } else if (data && Array.isArray(data.categories)) {
+        servicesList = data.categories;
+      } else if (data && Array.isArray(data.data)) {
+        servicesList = data.data;
+      }
+
+      if (servicesList.length > 0) {
+        setServices(servicesList);
+      }
+    } catch (error) {
+      console.error("Error fetching services:", error);
+      // Keep initial fallback services on error
+    } finally {
+      setLoadingServices(false);
+    }
+  };
 
   const fetchGermanStates = async () => {
     setLoadingStates(true);
@@ -103,7 +141,7 @@ const Waitlist = () => {
 
     try {
       const apiData = {
-        fullname: formData.fullName,
+        fullName: formData.fullName,
         email: formData.email,
         country: formData.country,
         city: formData.state,
@@ -329,13 +367,43 @@ const Waitlist = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-[#0000001A] focus:outline-none focus:border-[#FF6600]  appearance-none"
                     required
+                    disabled={loadingServices}
                   >
-                    <option value="">Select an interest</option>
-                    <option value="electrician">Electrician</option>
-                    <option value="plumber">Plumber</option>
-                    <option value="cleaner">Cleaner</option>
-                    <option value="painter">Painter</option>
-                    <option value="carpenter">Carpenter</option>
+                    <option value="">
+                      {loadingServices
+                        ? "Loading services..."
+                        : "Select an interest"}
+                    </option>
+                    {services.map((service, index) => {
+                      const value =
+                        typeof service === "string"
+                          ? service
+                          : service.name ||
+                            service.categoryName ||
+                            service.title ||
+                            service.label ||
+                            `service-${index}`;
+                      const label =
+                        typeof service === "string"
+                          ? service
+                          : service.name ||
+                            service.categoryName ||
+                            service.title ||
+                            service.label ||
+                            `Service ${index + 1}`;
+                      return (
+                        <option
+                          key={typeof value === "string" ? value : index}
+                          value={
+                            typeof value === "string"
+                              ? value.toLowerCase()
+                              : value
+                          }
+                        >
+                          {label}
+                        </option>
+                      );
+                    })}
                   </select>
                   <img
                     src="/chevron.svg"
