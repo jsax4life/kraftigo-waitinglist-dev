@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { joinWaitlist, getAllServices } from "../lib/api/waitlist";
+import { toast } from "sonner";
 
 const Waitlist = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const Waitlist = () => {
     state: "",
     role: "",
     serviceInterest: "",
+    customService: "",
     agreeToContact: false,
   });
 
@@ -49,11 +51,30 @@ const Waitlist = () => {
       }
 
       if (servicesList.length > 0) {
-        setServices(servicesList);
+        // Add "Other" to the fetched list
+        setServices([...servicesList, "Other"]);
+      } else {
+        // Ensure fallback has "Other"
+        setServices([
+          "Electrician",
+          "Plumber",
+          "Cleaner",
+          "Painter",
+          "Carpenter",
+          "Other",
+        ]);
       }
     } catch (error) {
       console.error("Error fetching services:", error);
-      // Keep initial fallback services on error
+      // Ensure fallback has "Other"
+      setServices([
+        "Electrician",
+        "Plumber",
+        "Cleaner",
+        "Painter",
+        "Carpenter",
+        "Other",
+      ]);
     } finally {
       setLoadingServices(false);
     }
@@ -140,18 +161,34 @@ const Waitlist = () => {
     setSubmitStatus(null);
 
     try {
+      const finalServiceInterest =
+        formData.serviceInterest.toLowerCase() === "other"
+          ? formData.customService
+          : formData.serviceInterest;
+
       const apiData = {
         fullName: formData.fullName,
         email: formData.email,
         country: formData.country,
         city: formData.state,
         role: formData.role,
-        serviceInterest: formData.serviceInterest,
+        serviceInterest: finalServiceInterest,
         agreesToContact: formData.agreeToContact,
       };
 
       await joinWaitlist(apiData);
       setSubmitStatus("success");
+      toast.success(
+        "You've been added to the waitlist! We'll be in touch soon.",
+        {
+          duration: 5000,
+          style: {
+            background: "#FF6600",
+            color: "#fff",
+            borderRadius: "8px",
+          },
+        },
+      );
       // Reset form on success
       setFormData({
         fullName: "",
@@ -160,11 +197,24 @@ const Waitlist = () => {
         state: "",
         role: "",
         serviceInterest: "",
+        customService: "",
         agreeToContact: false,
       });
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
+      toast.error(
+        error.response?.data?.message ||
+          "Failed to join waitlist. Please try again.",
+        {
+          duration: 5000,
+          style: {
+            background: "#EF4444",
+            color: "#fff",
+            borderRadius: "8px",
+          },
+        },
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -414,6 +464,27 @@ const Waitlist = () => {
               </div>
             </div>
 
+            {formData.serviceInterest.toLowerCase() === "other" && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                className="overflow-hidden"
+              >
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Specify service
+                </label>
+                <input
+                  type="text"
+                  name="customService"
+                  value={formData.customService}
+                  onChange={handleChange}
+                  placeholder="What service are you interested in?"
+                  className="w-full px-4 py-3 rounded-lg border border-[#0000001A] focus:outline-none focus:border-[#FF6600]"
+                  required
+                />
+              </motion.div>
+            )}
+
             <div className="flex items-center gap-3 pt-2">
               <label className="flex items-center gap-3 cursor-pointer">
                 <input
@@ -445,17 +516,6 @@ const Waitlist = () => {
                 </span>
               </label>
             </div>
-
-            {submitStatus === "success" && (
-              <p className="text-green-600 text-sm font-semibold pt-2 text-right">
-                ✓ Successfully joined! We'll be in touch soon.
-              </p>
-            )}
-            {submitStatus === "error" && (
-              <p className="text-red-600 text-sm font-semibold pt-2 text-right">
-                ✕ Failed to join. Please try again later.
-              </p>
-            )}
 
             <div className="flex justify-end gap-4 pt-4">
               <button
