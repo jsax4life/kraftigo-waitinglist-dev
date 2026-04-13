@@ -1,12 +1,12 @@
 import { Toaster } from "sonner";
-import Home from "./pages/Home";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
   return (
     <>
       <Toaster position="top-right" />
       <main>
-        <Home />
+        <Outlet />
       </main>
     </>
   );

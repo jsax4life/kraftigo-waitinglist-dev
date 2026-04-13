@@ -114,7 +114,7 @@ const Home = () => {
           </div>
 
           <div className="relative bg-[#FFEEEE] rounded-xl w-full md:w-100 h-60 md:h-70.25 p-3 overflow-hidden">
-            <img src="/multi.svg" alt="multi" className="absolute top-0 left-0 w-full object-cover" />
+            <img src="/multi.svg" alt="multi" className="absolute top-0 left-0" />
             <div className="absolute bottom-0">
               <h2 className="font-bold text-xl">Multilingual</h2>
               <p className="text-[#1C1C1CCC] pb-2">
