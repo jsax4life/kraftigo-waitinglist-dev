@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-[#F6F6F6] text-black py-8 md:py-12 px-4 md:px-12 mt-12 md:mt-20">
+    <footer className="bg-[#F6F6F6] text-black py-8 md:py-12 px-4 md:px-12">
       <div className="max-w-8xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-18 mb-8 md:mb-12">
           {/* About Kraftigo */}

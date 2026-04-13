@@ -37,7 +37,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="max-w-8xl mx-auto px-4 md:px-15 py-16">
+    <section className="py-16">
       <motion.div
         className="mb-8"
         initial={{ opacity: 0, y: 30 }}

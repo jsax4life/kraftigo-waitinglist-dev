@@ -5,14 +5,26 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="pt-6 md:pt-12 px-4 md:px-0">
+    <nav className="pt-6 md:pt-12 px-4 md:px-0 mx-10">
       {/* Desktop Navigation */}
-      <div className="hidden md:flex justify-center items-center gap-10">
-        <span className="cursor-pointer hover:text-[#FF6600] transition-colors">Home</span>
-        <span className="cursor-pointer hover:text-[#FF6600] transition-colors">About</span>
-        <img src="/logo.svg" alt="logo" className="ml-20 mr-20 h-8" />
-        <span className="cursor-pointer hover:text-[#FF6600] transition-colors">Services</span>
-        <span className="cursor-pointer hover:text-[#FF6600] transition-colors">Contact</span>
+      <div className="hidden md:flex justify-between items-center gap-10">
+        <div className="flex gap-15">
+          <span className="cursor-pointer hover:text-[#FF6600] transition-colors">
+            About us
+          </span>
+          <span className="cursor-pointer hover:text-[#FF6600] transition-colors">
+            Press
+          </span>
+        </div>
+        <img src="/logo.svg" alt="logo" className="ml-20 mr-20 h-10" />
+        <div className="flex gap-15">
+          <span className="cursor-pointer hover:text-[#FF6600] transition-colors">
+            Terms of use
+          </span>
+          <span className="cursor-pointer hover:text-[#FF6600] transition-colors">
+            Help
+          </span>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -22,11 +34,26 @@ const Navbar = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="p-2 text-gray-700 hover:text-[#FF6600]"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             )}
           </svg>
         </button>
@@ -42,10 +69,18 @@ const Navbar = () => {
             className="md:hidden mt-4 bg-white rounded-lg shadow-lg overflow-hidden"
           >
             <div className="flex flex-col py-4">
-              <span className="px-6 py-3 cursor-pointer hover:bg-gray-100 hover:text-[#FF6600] transition-colors">Home</span>
-              <span className="px-6 py-3 cursor-pointer hover:bg-gray-100 hover:text-[#FF6600] transition-colors">About</span>
-              <span className="px-6 py-3 cursor-pointer hover:bg-gray-100 hover:text-[#FF6600] transition-colors">Services</span>
-              <span className="px-6 py-3 cursor-pointer hover:bg-gray-100 hover:text-[#FF6600] transition-colors">Contact</span>
+              <span className="px-6 py-3 cursor-pointer hover:bg-gray-100 hover:text-[#FF6600] transition-colors">
+                Home
+              </span>
+              <span className="px-6 py-3 cursor-pointer hover:bg-gray-100 hover:text-[#FF6600] transition-colors">
+                About
+              </span>
+              <span className="px-6 py-3 cursor-pointer hover:bg-gray-100 hover:text-[#FF6600] transition-colors">
+                Services
+              </span>
+              <span className="px-6 py-3 cursor-pointer hover:bg-gray-100 hover:text-[#FF6600] transition-colors">
+                Contact
+              </span>
             </div>
           </motion.div>
         )}

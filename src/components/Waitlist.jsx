@@ -229,10 +229,7 @@ const Waitlist = () => {
   };
 
   return (
-    <section
-      className="max-w-8xl mx-auto px-4 md:px-12 py-8 md:py-16"
-      id="waitlist"
-    >
+    <section className="py-16" id="waitlist">
       <motion.div
         className="bg-[#F6F6F6] rounded-3xl p-6 md:p-12 border border-[#0000001A]"
         initial={{ opacity: 0, y: 50 }}

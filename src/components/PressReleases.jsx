@@ -19,25 +19,30 @@ const PressReleases = () => {
   ];
 
   return (
-    <section className="max-w-8xl mx-auto px-4 md:px-12 py-16">
+    <section className="py-16">
       <motion.div
-        className="text-center mb-12"
+        className="mb-12"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-bold text-[#000000CC] mb-3">
-          Press Releases
-        </h2>
-        <p className="text-gray-600">Kraftigo Through The Eyes Of The Media</p>
+        <div>
+          <p className="text-sm flex items-center gap-1 mb-1">
+            <span className="w-1 h-1 rounded-full bg-gray-500 inline-block"></span>
+            Press Releases
+          </p>
+          <h2 className="text-3xl font-bold font-garet text-[#000000CC]">
+            Kraftigo Through The Eyes Of The Media
+          </h2>
+        </div>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {articles.map((article, index) => (
           <motion.div
             key={index}
-            className="relative rounded-2xl overflow-hidden group cursor-pointer h-100"
+            className="relative rounded-2xl overflow-hidden group cursor-pointer h-80"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
