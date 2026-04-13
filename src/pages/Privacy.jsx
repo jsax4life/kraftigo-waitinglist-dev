@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Privacy = () => {
   const [activeSection, setActiveSection] = useState("Privacy & Cookie Policy");
@@ -101,6 +102,8 @@ const Privacy = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 };

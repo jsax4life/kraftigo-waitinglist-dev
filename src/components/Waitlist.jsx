@@ -516,17 +516,11 @@ const Waitlist = () => {
 
             <div className="flex justify-end gap-4 pt-4">
               <button
-                type="button"
-                className="px-6 py-3  rounded-xl bg-blue-100 text-blue-600 font-semibold hover:bg-blue-200 transition-colors"
-              >
-                Copy referral link
-              </button>
-              <button
                 type="submit"
                 disabled={isSubmitting}
                 className="px-8 py-3 rounded-xl bg-[#FF6600] text-white font-semibold hover:bg-[#ff6600cc] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Joining..." : "Done"}
+                {isSubmitting ? "Joining..." : "Send"}
               </button>
             </div>
           </form>
