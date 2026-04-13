@@ -8,52 +8,25 @@ const HowItWorks = () => {
     client: {
       title: "Get your tasks done in three simple steps",
       steps: [
-        {
-          id: "01",
-          title: "Search A Service",
-          description: "Search for any service you need help with.",
-        },
-        {
-          id: "02",
-          title: "Compare Nearby Krafters",
-          description:
-            "Compare distance, ratings, availability, price range, and trust signals.",
-        },
-        {
-          id: "03",
-          title: "Request A Quote Or Book",
-          description: "Chat, confirm scope, then book a time slot.",
-        },
+        { id: "01", title: "Search A Service", description: "Search for any service you need help with." },
+        { id: "02", title: "Compare Nearby Krafters", description: "Compare distance, ratings, availability, price range, and trust signals." },
+        { id: "03", title: "Request A Quote Or Book", description: "Chat, confirm scope, then book a time slot." },
       ],
       image: "/how.svg",
     },
     krafter: {
       title: "Start earning money on your terms",
       steps: [
-        {
-          id: "01",
-          title: "Sign up as a krafter and add your skills ",
-          description: "Search for any service you need help with.",
-        },
-        {
-          id: "02",
-          title:
-            "Find available krafts from marketplace or  get booked directly ",
-          description:
-            "Compare distance, ratings, availability, price range, and trust signals.",
-        },
-        {
-          id: "03",
-          title: "Get paid when you fulfill orders",
-          description: "Chat, confirm scope, then book a time slot.",
-        },
+        { id: "01", title: "Sign up as a krafter and add your skills", description: "Search for any service you need help with." },
+        { id: "02", title: "Find available krafts from marketplace or get booked directly", description: "Compare distance, ratings, availability, price range, and trust signals." },
+        { id: "03", title: "Get paid when you fulfill orders", description: "Chat, confirm scope, then book a time slot." },
       ],
       image: "/how2.svg",
     },
   };
 
   return (
-    <section className=" ">
+    <section>
       <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 30 }}
@@ -62,13 +35,11 @@ const HowItWorks = () => {
         transition={{ duration: 0.6 }}
       >
         {/* Tabs */}
-        <div className="flex justify-left gap-4 mb-8 md:mb-12 relative z-20">
+        <div className="flex justify-start gap-4 mb-8 md:mb-12 relative z-20">
           <button
             onClick={() => setActiveTab("client")}
             className={`text-base md:text-lg px-4 py-1.5 rounded-full relative ${
-              activeTab === "client"
-                ? "text-white bg-[#FF6600]"
-                : "text-white bg-[#919191] "
+              activeTab === "client" ? "text-white bg-[#FF6600]" : "text-white bg-[#919191]"
             }`}
           >
             Client
@@ -76,9 +47,7 @@ const HowItWorks = () => {
           <button
             onClick={() => setActiveTab("krafter")}
             className={`text-base md:text-lg px-4 py-1.5 rounded-full relative ${
-              activeTab === "krafter"
-                ? "text-white bg-[#0000FF]"
-                : "text-white bg-[#919191]"
+              activeTab === "krafter" ? "text-white bg-[#0000FF]" : "text-white bg-[#919191]"
             }`}
           >
             Krafter
@@ -86,10 +55,11 @@ const HowItWorks = () => {
         </div>
       </motion.div>
 
-      <div className="flex items-start gap-20 relative z-10">
+      {/* On mobile: stacked. On desktop: side-by-side */}
+      <div className="flex flex-col md:flex-row md:items-start md:gap-20 relative z-10">
         {/* Left column — title + image */}
         <div className="flex-1 flex flex-col">
-          <p className="text-2xl font-bold font-garet text-[#000000CC] mb-4 w-100">
+          <p className="text-xl md:text-2xl font-bold font-garet text-[#000000CC] mb-4 md:w-100">
             {tabContent[activeTab].title}
           </p>
           <motion.div
@@ -103,15 +73,15 @@ const HowItWorks = () => {
               alt=""
               className={
                 activeTab === "krafter"
-                  ? "w-110 object-contain"
-                  : "w-full object-contain max-h-125"
+                  ? "w-full max-w-xs md:w-110 object-contain mx-auto md:mx-0 hidden md:block"
+                  : "w-full object-contain max-h-64 md:max-h-125 hidden md:block"
               }
             />
           </motion.div>
         </div>
 
         {/* Right column — steps */}
-        <div className="flex-1 space-y-10 ">
+        <div className="flex-1 space-y-4 md:space-y-10 mt-8 md:mt-0">
           {tabContent[activeTab].steps.map((step, index) => (
             <motion.div
               key={step.id}
@@ -121,26 +91,24 @@ const HowItWorks = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="text-[40px] font-bold text-[#000000CC] shrink-0">
+              <div className="text-3xl md:text-[40px] font-bold text-[#000000CC] shrink-0">
                 {step.id}.
               </div>
               <div>
-                <h3 className="text-base md:text-lg font-bold text-[#000000CC]">
-                  {step.title}
-                </h3>
-                <p className="text-sm md:text-base text-gray-600">
-                  {step.description}
-                </p>
+                <h3 className="text-base md:text-lg font-bold text-[#000000CC]">{step.title}</h3>
+                <p className="text-sm md:text-base text-gray-600">{step.description}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Join waitlist button */}
       <div
         className={
           activeTab === "krafter"
             ? "flex justify-center mt-10"
-            : "flex justify-center -mt-30"
+            : "flex justify-center mt-8 md:-mt-30"
         }
       >
         <a

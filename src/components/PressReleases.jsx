@@ -32,7 +32,7 @@ const PressReleases = () => {
             <span className="w-1 h-1 rounded-full bg-gray-500 inline-block"></span>
             Press Releases
           </p>
-          <h2 className="text-3xl font-bold font-garet text-[#000000CC]">
+          <h2 className="text-xl md:text-3xl font-bold font-garet text-[#000000CC]">
             Kraftigo Through The Eyes Of The Media
           </h2>
         </div>

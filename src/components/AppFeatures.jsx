@@ -105,9 +105,9 @@ const AppFeatures = () => {
   };
 
   return (
-    <section className="py-12 relative mt-40">
+    <section className="py-12 relative mt-16 md:mt-40">
       {/* Header row */}
-      <div className="flex items-start justify-between mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-8 gap-4">
         <div>
           <p className="text-sm flex items-center gap-1 mb-1">
             <span className="w-1 h-1 rounded-full bg-gray-500 inline-block"></span>

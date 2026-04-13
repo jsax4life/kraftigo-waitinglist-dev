@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="pt-6 md:pt-12 px-4 md:px-0 mx-10">
+    <nav className="pt-6 md:pt-12 px-4 md:px-0 md:mx-10">
       {/* Desktop Navigation */}
       <div className="hidden md:flex justify-between items-center gap-10">
         <div className="flex gap-15">
