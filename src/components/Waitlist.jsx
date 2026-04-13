@@ -229,10 +229,7 @@ const Waitlist = () => {
   };
 
   return (
-    <section
-      className="max-w-8xl mx-auto px-4 md:px-12 py-8 md:py-16"
-      id="waitlist"
-    >
+    <section className="py-16" id="waitlist">
       <motion.div
         className="bg-[#F6F6F6] rounded-3xl p-6 md:p-12 border border-[#0000001A]"
         initial={{ opacity: 0, y: 50 }}
@@ -519,17 +516,11 @@ const Waitlist = () => {
 
             <div className="flex justify-end gap-4 pt-4">
               <button
-                type="button"
-                className="px-6 py-3  rounded-xl bg-blue-100 text-blue-600 font-semibold hover:bg-blue-200 transition-colors"
-              >
-                Copy referral link
-              </button>
-              <button
                 type="submit"
                 disabled={isSubmitting}
                 className="px-8 py-3 rounded-xl bg-[#FF6600] text-white font-semibold hover:bg-[#ff6600cc] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Joining..." : "Done"}
+                {isSubmitting ? "Joining..." : "Send"}
               </button>
             </div>
           </form>

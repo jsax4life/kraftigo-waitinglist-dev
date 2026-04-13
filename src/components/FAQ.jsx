@@ -37,7 +37,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="max-w-8xl mx-auto px-4 md:px-15 py-16">
+    <section className="py-16">
       <motion.div
         className="mb-8"
         initial={{ opacity: 0, y: 30 }}
@@ -45,7 +45,7 @@ const FAQ = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-bold text-[#000000CC] mb-3">
+        <h2 className="text-2xl md:text-4xl font-bold text-[#000000CC] mb-3">
           Frequently Asked Questions
         </h2>
         <p className="text-gray-600">
