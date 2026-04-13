@@ -19,7 +19,7 @@ const PressModal = ({ pressType, day, title, desc, pic, readTime }) => {
         <img
           src={pic}
           alt={title}
-          className="w-full md:w-[480px] h-48 md:h-50 object-cover rounded-xl border border-[#0000001A] shadow-sm"
+          className="w-full md:w-120 h-48 md:h-50 object-cover rounded-xl border border-[#0000001A] shadow-sm"
         />
       </div>
     </div>

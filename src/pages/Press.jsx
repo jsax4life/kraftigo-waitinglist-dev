@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import PressModal from "../components/PressModal";
 
 const Press = () => {
@@ -79,6 +80,7 @@ const Press = () => {
           )}
         </div>
       </section>
+      <Footer />
     </main>
   );
 };
