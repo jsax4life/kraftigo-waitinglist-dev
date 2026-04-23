@@ -20,12 +20,17 @@ const CtaBanner = () => {
           className="h-56 w-auto object-contain drop-shadow-xl"
         /> */}
         <h2 className="text-white text-xl font-bold text-center leading-snug">
-          Over 400 people have signed up for beta in four countries
+          Over 120 people have signed up for beta in four countries
         </h2>
 
         {/* Avatar stack */}
         <div className="flex items-center">
-          {["/images/1.png", "/images/2.png", "/images/3.png", "/images/4.png"].map((src, i) => (
+          {[
+            "/images/1.png",
+            "/images/2.png",
+            "/images/3.png",
+            "/images/4.png",
+          ].map((src, i) => (
             <img
               key={i}
               src={src}
@@ -38,23 +43,33 @@ const CtaBanner = () => {
             className="w-8 h-8 rounded-full bg-[#FF6600] text-white flex items-center justify-center text-xs font-bold border-2 border-white"
             style={{ marginLeft: "-8px" }}
           >
-            4h+
+            120+
           </div>
         </div>
 
         {/* Store buttons */}
         <div className="flex gap-3 flex-wrap justify-center">
-          <a href="#" className="flex items-center gap-2 border border-white rounded-xl px-4 py-1.5 text-white min-w-[140px]">
+          <a
+            href="#"
+            className="flex items-center gap-2 border border-white rounded-xl px-4 py-1.5 text-white min-w-[140px]"
+          >
             <img src="/play.svg" alt="play" />
             <div className="flex flex-col leading-tight">
-              <span className="text-[9px] uppercase tracking-wide opacity-80">Coming soon on</span>
+              <span className="text-[9px] uppercase tracking-wide opacity-80">
+                Coming soon on
+              </span>
               <span className="text-sm font-semibold">Google Play</span>
             </div>
           </a>
-          <a href="#" className="flex items-center gap-2 border border-white rounded-xl px-4 py-1.5 text-white min-w-[140px]">
+          <a
+            href="#"
+            className="flex items-center gap-2 border border-white rounded-xl px-4 py-1.5 text-white min-w-[140px]"
+          >
             <img src="/apple.svg" alt="apple" />
             <div className="flex flex-col leading-tight">
-              <span className="text-[9px] uppercase tracking-wide opacity-80">Coming soon on</span>
+              <span className="text-[9px] uppercase tracking-wide opacity-80">
+                Coming soon on
+              </span>
               <span className="text-sm font-semibold">App Store</span>
             </div>
           </a>
@@ -88,12 +103,17 @@ const CtaBanner = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h2 className="text-white text-2xl md:text-[32px] leading-snug">
-            Over 400 people have signed <br /> up for beta in four countries
+            Over 120 people have signed <br /> up for beta in four countries
           </h2>
 
           <div className="flex items-center gap-3">
             <div className="flex items-center">
-              {["/images/1.png", "/images/2.png", "/images/3.png", "/images/4.png"].map((src, i) => (
+              {[
+                "/images/1.png",
+                "/images/2.png",
+                "/images/3.png",
+                "/images/4.png",
+              ].map((src, i) => (
                 <img
                   key={i}
                   src={src}
@@ -106,23 +126,33 @@ const CtaBanner = () => {
                 className="w-9 h-9 rounded-full bg-[#FF6600] text-white flex items-center justify-center text-xs font-bold border-2 border-white"
                 style={{ marginLeft: "-10px" }}
               >
-                4h+
+                120+
               </div>
             </div>
           </div>
 
           <div className="flex gap-4 flex-wrap">
-            <a href="#" className="flex items-center gap-2 border border-white rounded-xl px-4 py-1.5 text-white hover:bg-white hover:text-[#FF6600] transition-colors duration-200 min-w-37.5">
+            <a
+              href="#"
+              className="flex items-center gap-2 border border-white rounded-xl px-4 py-1.5 text-white hover:bg-white hover:text-[#FF6600] transition-colors duration-200 min-w-37.5"
+            >
               <img src="/play.svg" alt="play" />
               <div className="flex flex-col leading-tight">
-                <span className="text-[9px] uppercase tracking-wide opacity-80">Coming soon on</span>
+                <span className="text-[9px] uppercase tracking-wide opacity-80">
+                  Coming soon on
+                </span>
                 <span className="text-sm font-semibold">Google Play</span>
               </div>
             </a>
-            <a href="#" className="flex items-center gap-2 border border-white rounded-xl px-4 py-1.5 text-white hover:bg-white hover:text-[#FF6600] transition-colors duration-200 min-w-37.5">
+            <a
+              href="#"
+              className="flex items-center gap-2 border border-white rounded-xl px-4 py-1.5 text-white hover:bg-white hover:text-[#FF6600] transition-colors duration-200 min-w-37.5"
+            >
               <img src="/apple.svg" alt="apple" />
               <div className="flex flex-col leading-tight">
-                <span className="text-[9px] uppercase tracking-wide opacity-80">Coming soon on</span>
+                <span className="text-[9px] uppercase tracking-wide opacity-80">
+                  Coming soon on
+                </span>
                 <span className="text-sm font-semibold">App Store</span>
               </div>
             </a>
