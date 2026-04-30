@@ -270,13 +270,13 @@ const Waitlist = () => {
                   className="w-10 h-10 rounded-full border-2 border-white -ml-3"
                 />
                 <div className="w-10 h-10 rounded-full bg-[#FF6600] flex items-center justify-center text-white font-bold text-xs -ml-3 border-2 border-white">
-                  5k+
+                  120
                 </div>
               </div>
               <p className="text-[10px] text-gray-600">
-                Over <span className="text-[#FF6600]">5k people</span> signed up
+                Over <span className="text-[#FF6600]">120 people</span> signed up
                 <br />
-                to beta in <span className="text-[#FF6600]">4 countries</span>
+                to beta in <span className="text-[#FF6600]">4 cities</span>
               </p>
             </div>
 

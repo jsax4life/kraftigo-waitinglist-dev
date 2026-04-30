@@ -78,7 +78,7 @@ const Home = () => {
                   <p className="text-[8.29px]">
                     Over <span className="text-[#FF6600]">120 people</span>{" "}
                     signed up <br /> to beta in{" "}
-                    <span className="text-[#FF6600]">4 countries</span>
+                    <span className="text-[#FF6600]">4 cities</span>
                   </p>
                 </motion.div>
 

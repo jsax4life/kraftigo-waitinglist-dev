@@ -25,7 +25,7 @@ const Press = () => {
       pressType: "Product Updates",
     },
     {
-      title: "Kraftigo set to Launch in 4 countries",
+      title: "Kraftigo set to Launch in 4 cities",
       date: "Feb 28, 2026",
       description:
         "Need ideas for family activities in NYC this fall? Here's a guide to the best Broadway shows and musicals to see this autumn.",

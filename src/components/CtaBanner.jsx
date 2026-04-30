@@ -20,7 +20,7 @@ const CtaBanner = () => {
           className="h-56 w-auto object-contain drop-shadow-xl"
         /> */}
         <h2 className="text-white text-xl font-bold text-center leading-snug">
-          Over 120 people have signed up for beta in four countries
+          Over 120 people have signed up for beta in four cities
         </h2>
 
         {/* Avatar stack */}
@@ -103,7 +103,7 @@ const CtaBanner = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h2 className="text-white text-2xl md:text-[32px] leading-snug">
-            Over 120 people have signed <br /> up for beta in four countries
+            Over 120 people have signed <br /> up for beta in four cities
           </h2>
 
           <div className="flex items-center gap-3">
