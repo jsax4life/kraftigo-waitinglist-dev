@@ -51,16 +51,32 @@ const Home = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
                   <div className="flex items-center">
-                    <img src="/images/1.png" alt="User" className="w-10 h-10 rounded-full border-2 border-white" />
-                    <img src="/images/2.png" alt="User" className="w-10 h-10 rounded-full border-2 border-white -ml-5" />
-                    <img src="/images/3.png" alt="User" className="w-10 h-10 rounded-full border-2 border-white -ml-5" />
-                    <img src="/images/4.png" alt="User" className="w-10 h-10 rounded-full border-2 border-white -ml-5" />
+                    <img
+                      src="/images/1.png"
+                      alt="User"
+                      className="w-10 h-10 rounded-full border-2 border-white"
+                    />
+                    <img
+                      src="/images/2.png"
+                      alt="User"
+                      className="w-10 h-10 rounded-full border-2 border-white -ml-5"
+                    />
+                    <img
+                      src="/images/3.png"
+                      alt="User"
+                      className="w-10 h-10 rounded-full border-2 border-white -ml-5"
+                    />
+                    <img
+                      src="/images/4.png"
+                      alt="User"
+                      className="w-10 h-10 rounded-full border-2 border-white -ml-5"
+                    />
                     <div className="w-10 h-10 rounded-full bg-[#FF6600] flex items-center justify-center text-white font-bold text-sm -ml-5 border-2 border-white">
-                      5k+
+                      120+
                     </div>
                   </div>
                   <p className="text-[8.29px]">
-                    Over <span className="text-[#FF6600]">4h people</span>{" "}
+                    Over <span className="text-[#FF6600]">120 people</span>{" "}
                     signed up <br /> to beta in{" "}
                     <span className="text-[#FF6600]">4 countries</span>
                   </p>
@@ -84,7 +100,11 @@ const Home = () => {
           {/* Hero image box */}
           <section className="relative mt-16 md:mt-40 w-full h-48 md:h-90.5 border border-[#F6F6F6] rounded-2xl bg-linear-to-b from-[#F6F6F6] to-[#FFFFFF]">
             <div className="inset-0 pointer-events-none z-0 overflow-hidden p-2">
-              <img src="/boxes.svg" alt="background" className="w-full h-full object-cover opacity-90" />
+              <img
+                src="/boxes.svg"
+                alt="background"
+                className="w-full h-full object-cover opacity-90"
+              />
             </div>
             <div className="absolute -top-10 md:-top-25 left-0 w-full h-full">
               <img
@@ -110,11 +130,19 @@ const Home = () => {
               <br className="hidden md:block" />
               your immediate area for faster, more convenient service.
             </p>
-            <img src="/proximity.svg" alt="proximity" className="absolute bottom-0 right-0 w-40 md:w-auto" />
+            <img
+              src="/proximity.svg"
+              alt="proximity"
+              className="absolute bottom-0 right-0 w-40 md:w-auto"
+            />
           </div>
 
           <div className="relative bg-[#FFEEEE] rounded-xl w-full md:w-100 h-60 md:h-70.25 p-3 overflow-hidden">
-            <img src="/multi.svg" alt="multi" className="absolute top-0 left-0" />
+            <img
+              src="/multi.svg"
+              alt="multi"
+              className="absolute top-0 left-0"
+            />
             <div className="absolute bottom-0">
               <h2 className="font-bold text-xl">Multilingual</h2>
               <p className="text-[#1C1C1CCC] pb-2">
@@ -145,7 +173,8 @@ const Home = () => {
               <span className="text-[#FF6600]">
                 busy people need <br /> everyday help
               </span>{" "}
-              but remain disconnected <br className="hidden md:block" /> from those ready to assist.
+              but remain disconnected <br className="hidden md:block" /> from
+              those ready to assist.
             </h2>
             <p className="text-[#000000B2] text-lg md:text-2xl mt-8 md:mt-12">
               Kraftigo connects them both with a single tap.
