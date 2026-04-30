@@ -26,7 +26,7 @@ const Help = () => {
       {
         question: "Where is Kraftigö available?",
         answer:
-          "Currently we are expanding across 4 countries with a focus on local neighborhoods.",
+          "Currently we are expanding across 4 cities with a focus on local neighborhoods.",
       },
       {
         question: "How does Kraftigö ensure trust and safety?",
