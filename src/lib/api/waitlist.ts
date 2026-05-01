@@ -29,3 +29,23 @@ export const getAllServices = async () => {
     throw error;
   }
 };
+
+export const getWaitlistSignupsCount = async (): Promise<number> => {
+  try {
+    const response = await api.get("/api/waitlist");
+    const data = response.data;
+
+    if (Array.isArray(data)) {
+      return data.length;
+    }
+
+    if (data && Array.isArray(data.data)) {
+      return data.data.length;
+    }
+
+    return 0;
+  } catch (error) {
+    console.error("Error fetching waitlist signups:", error);
+    throw error;
+  }
+};

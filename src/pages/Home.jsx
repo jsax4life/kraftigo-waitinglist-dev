@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -7,8 +8,24 @@ import PressReleases from "../components/PressReleases";
 import Waitlist from "../components/Waitlist";
 import FAQ from "../components/FAQ";
 import CtaBanner from "../components/CtaBanner";
+import { getWaitlistSignupsCount } from "../lib/api/waitlist";
 
 const Home = () => {
+  const [waitlistCount, setWaitlistCount] = useState(120);
+
+  useEffect(() => {
+    const fetchWaitlistCount = async () => {
+      try {
+        const count = await getWaitlistSignupsCount();
+        setWaitlistCount(count);
+      } catch (error) {
+        console.error("Failed to fetch waitlist count:", error);
+      }
+    };
+
+    fetchWaitlistCount();
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -72,11 +89,12 @@ const Home = () => {
                       className="w-10 h-10 rounded-full border-2 border-white -ml-5"
                     />
                     <div className="w-10 h-10 rounded-full bg-[#FF6600] flex items-center justify-center text-white font-bold text-sm -ml-5 border-2 border-white">
-                      120+
+                      {waitlistCount}
                     </div>
                   </div>
                   <p className="text-[8.29px]">
-                    Over <span className="text-[#FF6600]">120 people</span>{" "}
+                    Over{" "}
+                    <span className="text-[#FF6600]">{waitlistCount} people</span>{" "}
                     signed up <br /> to beta in{" "}
                     <span className="text-[#FF6600]">4 cities</span>
                   </p>
