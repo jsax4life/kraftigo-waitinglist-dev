@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { joinWaitlist, getAllServices } from "../lib/api/waitlist";
+import {
+  joinWaitlist,
+  getAllServices,
+  getWaitlistSignupsCount,
+} from "../lib/api/waitlist";
 import { toast } from "sonner";
 
 const Waitlist = () => {
@@ -25,12 +29,23 @@ const Waitlist = () => {
   ]);
   const [loadingStates, setLoadingStates] = useState(false);
   const [loadingServices, setLoadingServices] = useState(false);
+  const [waitlistCount, setWaitlistCount] = useState(120);
 
   // Fetch German states when component mounts
   useEffect(() => {
     fetchGermanStates();
     fetchServices();
+    fetchWaitlistCount();
   }, []);
+
+  const fetchWaitlistCount = async () => {
+    try {
+      const count = await getWaitlistSignupsCount();
+      setWaitlistCount(count);
+    } catch (error) {
+      console.error("Error fetching waitlist count:", error);
+    }
+  };
 
   const fetchServices = async () => {
     setLoadingServices(true);
@@ -270,13 +285,13 @@ const Waitlist = () => {
                   className="w-10 h-10 rounded-full border-2 border-white -ml-3"
                 />
                 <div className="w-10 h-10 rounded-full bg-[#FF6600] flex items-center justify-center text-white font-bold text-xs -ml-3 border-2 border-white">
-                  120
+                  {waitlistCount}
                 </div>
               </div>
               <p className="text-[10px] text-gray-600">
-                Over <span className="text-[#FF6600]">120 people</span> signed up
-                <br />
-                to beta in <span className="text-[#FF6600]">4 cities</span>
+                Over <span className="text-[#FF6600]">{waitlistCount} people</span>{" "}
+                signed up
+                <br /> to beta in <span className="text-[#FF6600]">4 cities</span>
               </p>
             </div>
 

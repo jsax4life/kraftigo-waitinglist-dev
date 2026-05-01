@@ -1,6 +1,23 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { getWaitlistSignupsCount } from "../lib/api/waitlist";
 
 const CtaBanner = () => {
+  const [waitlistCount, setWaitlistCount] = useState(120);
+
+  useEffect(() => {
+    const fetchWaitlistCount = async () => {
+      try {
+        const count = await getWaitlistSignupsCount();
+        setWaitlistCount(count);
+      } catch (error) {
+        console.error("Failed to fetch waitlist count:", error);
+      }
+    };
+
+    fetchWaitlistCount();
+  }, []);
+
   return (
     <section className="relative w-full mt-16">
       {/* Background gradient */}
@@ -20,7 +37,7 @@ const CtaBanner = () => {
           className="h-56 w-auto object-contain drop-shadow-xl"
         /> */}
         <h2 className="text-white text-xl font-bold text-center leading-snug">
-          Over 120 people have signed up for beta in four cities
+          Over {waitlistCount} people have signed up for beta in four cities
         </h2>
 
         {/* Avatar stack */}
@@ -43,7 +60,7 @@ const CtaBanner = () => {
             className="w-8 h-8 rounded-full bg-[#FF6600] text-white flex items-center justify-center text-xs font-bold border-2 border-white"
             style={{ marginLeft: "-8px" }}
           >
-            120+
+            {waitlistCount}
           </div>
         </div>
 
@@ -103,7 +120,8 @@ const CtaBanner = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h2 className="text-white text-2xl md:text-[32px] leading-snug">
-            Over 120 people have signed <br /> up for beta in four cities
+            Over {waitlistCount} people have signed <br /> up for beta in four
+            cities
           </h2>
 
           <div className="flex items-center gap-3">
@@ -126,7 +144,7 @@ const CtaBanner = () => {
                 className="w-9 h-9 rounded-full bg-[#FF6600] text-white flex items-center justify-center text-xs font-bold border-2 border-white"
                 style={{ marginLeft: "-10px" }}
               >
-                120+
+                {waitlistCount}
               </div>
             </div>
           </div>
