@@ -20,22 +20,22 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-2 text-sm text-black">
               <li>
-                <a href="#" className="hover:text-[#FF6600] transition-colors">
+                <a href="/about" className="hover:text-[#FF6600] transition-colors hover:scale-105">
                   About us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#FF6600] transition-colors">
+                <a href="#" className="hover:text-[#FF6600] transition-colors hover:scale-105">
                   Career
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#FF6600] transition-colors">
+                <a href="/press" className="hover:text-[#FF6600] transition-colors hover:scale-105">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#FF6600] transition-colors">
+                <a href="https://www.kraftigo.app" target="_blank" className="hover:text-[#FF6600] transition-colors hover:scale-105">
                   Become a tasker
                 </a>
               </li>
@@ -47,17 +47,17 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Legal</h3>
             <ul className="space-y-2 text-sm text-black">
               <li>
-                <a href="#" className="hover:text-[#FF6600] transition-colors">
+                <a href="/privacy" className="hover:text-[#FF6600] transition-colors">
                   Terms of service
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#FF6600] transition-colors">
+                <a href="/privacy" className="hover:text-[#FF6600] transition-colors">
                   Privacy policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#FF6600] transition-colors">
+                <a href="/privacy" className="hover:text-[#FF6600] transition-colors">
                   Cookie Policy
                 </a>
               </li>
