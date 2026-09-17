@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 
 const features = [
@@ -41,6 +41,10 @@ const features = [
     pic: "/images/feat7.jpg",
     layout: "bottom-arrow",
     blob: "140px 24px 24px 40px"
+  },
+  {
+    type: "more",
+    bg: "bg-[#FF6600]",
   }
 ];
 
@@ -52,22 +56,147 @@ const ArrowIcon = ({ size = 80 }) => (
 
 const AppFeatures = () => {
   const scrollRef = useRef(null);
+  const progressBarRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  const handleScroll = () => {
+  // --- card drag-to-scroll state ---
+  const isDraggingCards = useRef(false);
+  const cardDragStartX = useRef(0);
+  const cardScrollStart = useRef(0);
+  // velocity tracking for momentum on release
+  const lastDragX = useRef(0);
+  const lastDragTime = useRef(0);
+  const dragVelocity = useRef(0);
+
+  // --- progress bar drag state ---
+  const isDraggingBar = useRef(false);
+
+  const handleScroll = useCallback(() => {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
       const maxScrollLeft = scrollWidth - clientWidth;
       const progress = maxScrollLeft > 0 ? scrollLeft / maxScrollLeft : 0;
       setScrollProgress(progress);
     }
-  };
+  }, []);
+
+  // Scroll cards to a given progress value (0–1)
+  const scrollCardsToProgress = useCallback((progress, smooth = false) => {
+    if (scrollRef.current) {
+      const { scrollWidth, clientWidth } = scrollRef.current;
+      const maxScrollLeft = scrollWidth - clientWidth;
+      const target = progress * maxScrollLeft;
+      if (smooth) {
+        scrollRef.current.scrollTo({ left: target, behavior: 'smooth' });
+      } else {
+        scrollRef.current.scrollLeft = target;
+      }
+    }
+  }, []);
+
+  // --- Progress bar interaction ---
+  const getBarProgress = useCallback((clientX) => {
+    const bar = progressBarRef.current;
+    if (!bar) return 0;
+    const { left, width } = bar.getBoundingClientRect();
+    const thumbWidth = bar.offsetWidth / 12; // w-1/12
+    const trackWidth = width - thumbWidth;
+    const clamped = Math.max(0, Math.min(clientX - left - thumbWidth / 2, trackWidth));
+    return clamped / trackWidth;
+  }, []);
+
+  const onBarMouseDown = useCallback((e) => {
+    e.preventDefault();
+    isDraggingBar.current = true;
+    // Enable smooth scroll on the container while bar is being dragged
+    if (scrollRef.current) scrollRef.current.style.scrollBehavior = 'smooth';
+    const progress = getBarProgress(e.clientX);
+    setScrollProgress(progress);
+    scrollCardsToProgress(progress);
+  }, [getBarProgress, scrollCardsToProgress]);
+
+  const onBarTouchStart = useCallback((e) => {
+    isDraggingBar.current = true;
+    if (scrollRef.current) scrollRef.current.style.scrollBehavior = 'smooth';
+    const progress = getBarProgress(e.touches[0].clientX);
+    setScrollProgress(progress);
+    scrollCardsToProgress(progress);
+  }, [getBarProgress, scrollCardsToProgress]);
+
+  // --- Card drag-to-scroll ---
+  const onCardMouseDown = useCallback((e) => {
+    isDraggingCards.current = true;
+    cardDragStartX.current = e.pageX;
+    cardScrollStart.current = scrollRef.current?.scrollLeft ?? 0;
+    lastDragX.current = e.pageX;
+    lastDragTime.current = Date.now();
+    dragVelocity.current = 0;
+    // Disable smooth scroll during active drag for instant tracking
+    if (scrollRef.current) {
+      scrollRef.current.style.scrollBehavior = 'auto';
+      scrollRef.current.style.cursor = 'grabbing';
+    }
+  }, []);
 
   useEffect(() => {
     handleScroll();
     window.addEventListener('resize', handleScroll);
-    return () => window.removeEventListener('resize', handleScroll);
-  }, []);
+
+    const onMouseMove = (e) => {
+      if (isDraggingBar.current) {
+        const progress = getBarProgress(e.clientX);
+        setScrollProgress(progress);
+        scrollCardsToProgress(progress);
+      }
+      if (isDraggingCards.current && scrollRef.current) {
+        const now = Date.now();
+        const dt = now - lastDragTime.current || 1;
+        dragVelocity.current = (lastDragX.current - e.pageX) / dt; // px/ms
+        lastDragX.current = e.pageX;
+        lastDragTime.current = now;
+        const dx = e.pageX - cardDragStartX.current;
+        scrollRef.current.scrollLeft = cardScrollStart.current - dx;
+      }
+    };
+
+    const onTouchMove = (e) => {
+      if (isDraggingBar.current) {
+        const progress = getBarProgress(e.touches[0].clientX);
+        setScrollProgress(progress);
+        scrollCardsToProgress(progress);
+      }
+    };
+
+    const onMouseUp = () => {
+      if (isDraggingBar.current) {
+        // Remove smooth behaviour after bar drag ends
+        if (scrollRef.current) scrollRef.current.style.scrollBehavior = 'auto';
+      }
+      isDraggingBar.current = false;
+
+      if (isDraggingCards.current && scrollRef.current) {
+        // Momentum coast: project forward based on velocity
+        const momentum = dragVelocity.current * 120; // tune multiplier for feel
+        const target = scrollRef.current.scrollLeft + momentum;
+        scrollRef.current.scrollTo({ left: target, behavior: 'smooth' });
+        scrollRef.current.style.cursor = 'grab';
+      }
+      isDraggingCards.current = false;
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+    window.addEventListener('touchmove', onTouchMove);
+    window.addEventListener('touchend', onMouseUp);
+
+    return () => {
+      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+      window.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('touchend', onMouseUp);
+    };
+  }, [handleScroll, getBarProgress, scrollCardsToProgress]);
 
   return (
     <section className="py-20 md:py-32 overflow-hidden">
@@ -121,8 +250,9 @@ const AppFeatures = () => {
         <div 
           ref={scrollRef}
           onScroll={handleScroll}
+          onMouseDown={onCardMouseDown}
           className="flex gap-6 md:gap-5 overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory px-4 md:px-10"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none", cursor: 'grab', userSelect: 'none' }}
         >
           {features.map((feature, index) => (
             <motion.div
@@ -133,7 +263,31 @@ const AppFeatures = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {feature.layout === "bottom-arrow" ? (
+              {feature.type === "more" ? (
+                <div className="flex flex-col items-start justify-end h-full p-2">
+                  {/* Decorative dots */}
+                  <div className="absolute inset-0 overflow-hidden opacity-20">
+                    {[...Array(12)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute rounded-full bg-white"
+                        style={{
+                          width: `${8 + (i % 3) * 10}px`,
+                          height: `${8 + (i % 3) * 10}px`,
+                          top: `${10 + (i * 17) % 80}%`,
+                          left: `${5 + (i * 23) % 90}%`,
+                          opacity: 0.3 + (i % 4) * 0.15,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <p className="text-white text-[28px] md:text-[36px] font-garet font-bold leading-tight tracking-tight relative z-10">
+                    and so<br />much more.
+                  </p>
+                  <p className="text-white/60 text-[14px] mt-2 relative z-10">Whatever the task, we've got someone for it.</p>
+                </div>
+              ) : feature.layout === "bottom-arrow" ? (
+
                 <>
                   <div className="w-[55%] relative z-10">
                     <h3 className="text-[19px] font-bold font-garet text-[#000000CC ] mb-2 tracking-[-0.38px]">{feature.title}</h3>
@@ -173,10 +327,15 @@ const AppFeatures = () => {
         </div>
 
         {/* Scroll Progress Bar */}
-        <div className="max-w-[2000px] mx-auto h-3 bg-[#F0F0F0] rounded-full mt-6 relative overflow-hidden">
+        <div
+          ref={progressBarRef}
+          className="max-w-[2000px] mx-auto h-3 bg-[#F0F0F0] rounded-full mt-6 relative overflow-hidden cursor-pointer"
+          onMouseDown={onBarMouseDown}
+          onTouchStart={onBarTouchStart}
+        >
           <motion.div 
             className="h-full bg-[#0000FF] rounded-full absolute top-0 w-1/12"
-            style={{ left: `${scrollProgress * 75}%` }}
+            style={{ left: `${scrollProgress * (100 - 100/12)}%` }}
             transition={{ type: "tween", ease: "linear", duration: 0.1 }}
           />
         </div>
