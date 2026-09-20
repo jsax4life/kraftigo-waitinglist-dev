@@ -1,0 +1,219 @@
+{
+  "ticker": "Kraftigö befindet sich in der Beta-Phase. Registrieren Sie sich jetzt für die Warteliste",
+
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "press": "Presse",
+    "termsOfUse": "Nutzungsbedingungen",
+    "help": "Hilfe"
+  },
+
+  "hero": {
+    "heading1": "Geprüfte lokale Fachkräfte,",
+    "heading2a": "so nah wie Ihre eigene",
+    "heading2b": "Nachbarschaft.",
+    "subheading": "Alltägliche Aufgaben, erledigt von geprüften Personen aus Ihrer Umgebung.",
+    "cta": "Krafter finden"
+  },
+
+  "supportedBy": "UNTERSTÜTZT VON",
+
+  "why": {
+    "label": "Warum Kraftigo",
+    "card1Title": "Nah dran, von Anfang an.",
+    "card1Body": "Die Suche beginnt an Ihrer Adresse \nund arbeitet sich nach außen vor. \nDie Person, die erscheint, kommt \nwirklich aus Ihrer Gegend und ist \nnicht nur bereit, eine weite Strecke zu fahren.",
+    "card2Title": "Verifiziert, bevor \nSie diese sehen.",
+    "card2Body": "Jeder Krafter schließt eine \nIdentitätsverifizierung ab, bevor \nsein Profil freigeschaltet wird. \nWo es die Arbeit erfordert, prüfen \nwir auch Qualifikationen, \nVersicherungen und Gewerbeanmeldung.",
+    "card3Title": "Sprechen Sie Ihre Sprache.",
+    "card3Body": "Unsere Krafter kommen aus lokalen \nund internationalen Gemeinschaften, \nsodass Sie häufig jemanden finden, \nmit dem Sie sich gut verständigen können.",
+    "h2": "Jemanden zu finden, dem man vertrauen kann, sollte nicht drei Tage und vier Telefonate in Anspruch nehmen.",
+    "p1": "Derzeit sind die Möglichkeiten eine Suchmaschine voller Angebote aus drei Städten entfernt, eine Community-Gruppe, in der jeder alles behaupten kann, oder das Herumfragen und Warten, bis sich ein Bekannter meldet. Am Ende wählt man zwischen einem Fremden, über den man nichts weiß, und einer Verzögerung, die man nicht eingeplant hat.",
+    "p2": "Dabei haben Menschen ein paar Straßen weiter genau die Fähigkeit, die Sie benötigen, und keinen einfachen Weg, Sie zu erreichen.",
+    "quote": "Kraftigo beginnt dort, wo Sie sind. Sie sehen, wer in der Nähe ist, Sie sehen, wofür diese Person verifiziert wurde, und Sie sprechen direkt mit ihr, bevor irgendetwas vereinbart wird."
+  },
+
+  "features": {
+    "sectionHeading": "Wobei können Sie \nHilfe bekommen?",
+    "sectionBody": "Die alltäglichen Dinge, die sich schneller stapeln, \nals man dazu kommt. Reinigung, Gartenarbeit, \nUmzug und vieles mehr. Was auch immer es ist, \njemand in der Nähe kann es wahrscheinlich erledigen.",
+    "cards": [
+      { "title": "Besorgungen",          "desc": "Einkaufsfahrten, Paketrücksendungen, Abholungen und die kleinen Aufgaben, die sich ansammeln." },
+      { "title": "Gartenarbeit",         "desc": "Rasenpflege, Pflanzen, Jäten, Heckenschnitt und saisonale Gartenarbeiten." },
+      { "title": "Umzug und Transport",  "desc": "Packen, Heben, Laden oder Dinge von einem Ort zum anderen bringen." },
+      { "title": "Reinigung",            "desc": "Grundreinigung, regelmäßige Hauspflege und Auszugsreinigungen." },
+      { "title": "Außenbereich",         "desc": "Terrassenreinigung, Dachrinnenreinigung und Außenhauspflege." }
+    ],
+    "moreTitle": "und noch\nviel mehr.",
+    "moreBody": "Egal welche Aufgabe, wir haben jemanden dafür."
+  },
+
+  "howItWorks": {
+    "heading": "So funktioniert es",
+    "clientTab": "Auftraggeber",
+    "krafterTab": "Krafter",
+    "findKrafter": "Krafter finden",
+    "client": [
+      { "id": "01", "title": "Sagen Sie, was Sie brauchen.",     "description": "Beschreiben Sie die Aufgabe und Ihren Standort." },
+      { "id": "02", "title": "Sehen Sie, wer in der Nähe ist.", "description": "Durchsuchen Sie verifizierte Krafter in Ihrer Nähe mit Fähigkeiten, Sprachen, Verfügbarkeit und Bewertungen." },
+      { "id": "03", "title": "Besprechen Sie die Details.",      "description": "Schreiben Sie direkt und einigen Sie sich auf Umfang, Zeitplan und Preis, bevor etwas bestätigt wird." },
+      { "id": "04", "title": "Erledigt.",                       "description": "Buchen Sie den Termin und widmen Sie sich wieder Ihrem Alltag." }
+    ],
+    "krafter": [
+      { "id": "01", "title": "Registrieren Sie sich und geben Sie Ihre Fähigkeiten an.", "description": "Erstellen Sie Ihr Profil und zeigen Sie, was Sie können." },
+      { "id": "02", "title": "Verfügbare Aufträge finden.",                              "description": "Durchsuchen Sie den Marktplatz oder lassen Sie sich direkt von Auftraggebern buchen." },
+      { "id": "03", "title": "Arbeit erledigen.",                                        "description": "Erscheinen Sie pünktlich, leisten Sie hervorragende Arbeit und bauen Sie Ihren Ruf auf." },
+      { "id": "04", "title": "Sicher bezahlt werden.",                                   "description": "Erhalten Sie Ihre Vergütung direkt, wenn Sie Aufträge abschließen." }
+    ]
+  },
+
+  "trust": {
+    "heading": "Vertrauen sollte keine \nNebensache sein.",
+    "body": "Sie lassen jemanden in Ihr Zuhause oder übergeben ihm etwas Wichtiges. Das verdient mehr als eine Anzeige und eine Telefonnummer.",
+    "features": [
+      { "title": "Identitätsverifizierung bei jedem Krafter.",   "desc": "Niemand erscheint auf Kraftigo, ohne zuvor eine Identitätsverifizierung abgeschlossen zu haben." },
+      { "title": "Nachweise, wo die Arbeit es verlangt.",        "desc": "Qualifikationen, Versicherungen und Gewerbeanmeldungen werden geprüft und dort angezeigt, wo sie relevant sind." },
+      { "title": "Profile, die man wirklich lesen kann.",         "desc": "Fähigkeiten, Sprachen, Einsatzgebiet und abgeschlossene Aufträge, damit Sie wissen, wen Sie in Betracht ziehen." },
+      { "title": "Bewertungen und Feedback.",                     "desc": "Bewertungen entstehen aus abgeschlossenen Aufträgen, so bleibt der Ruf an echte Arbeit geknüpft." },
+      { "title": "Erst einigen, dann buchen.",                    "desc": "Besprechen Sie die Aufgabe und klären Sie alle Details, bevor etwas bestätigt wird." }
+    ]
+  },
+
+  "location": {
+    "heading": "In Soest zu Hause. Wächst eine Stadt nach der anderen.",
+    "body": "Eine Stadt geht auf Kraftigo erst live, wenn dort genug Krafter aktiv sind, damit \"in Ihrer Nähe\" wirklich nah bedeutet. Diese Dichte aufzubauen braucht Zeit, und wir möchten lieber an einem Ort wirklich nützlich sein als an zehn nur dünn vertreten. Soest ist der Anfang."
+  },
+
+  "join": {
+    "heading": "Verwandeln Sie eine Fähigkeit\nin regelmäßige lokale Aufträge.",
+    "body": "Kraftigo ist für Menschen entwickelt, die bereits etwas Nützliches anzubieten haben. Studierende mit freien Stunden zwischen Vorlesungen. Menschen, die neu angekommen sind und hier Fuß fassen möchten. Einheimische, deren Fähigkeit am Wochenende besser ist als der Hauptberuf der meisten. Sie entscheiden, was Sie anbieten, wann Sie verfügbar sind und wie weit Sie bereit sind zu gehen.",
+    "cta": "Krafter werden",
+    "benefits": [
+      { "title": "In der Nähe arbeiten.",                            "description": "Anfragen kommen aus Ihrer Gegend, so geht keine Zeit für Fahrtzeiten verloren." },
+      { "title": "Eigene Konditionen festlegen.",                   "description": "Ihre Leistungen, Ihre Verfügbarkeit, Ihre Preise, direkt mit dem Auftraggeber vereinbart." },
+      { "title": "Gefunden werden für das, was Sie wirklich tun.", "description": "Auftraggeber suchen nach der spezifischen Hilfe, die sie brauchen, und Ihr Profil zeigt ihnen, dass Sie es können." },
+      { "title": "Einen Ruf aufbauen, der bleibt.",                 "description": "Verifizierung und abgeschlossene Aufträge bauen ein Profil auf, das weiter Aufträge bringt." },
+      { "title": "In Ihrer Sprache arbeiten.",                      "description": "Verbinden Sie sich mit Auftraggebern aus lokalen und internationalen Gemeinschaften." }
+    ]
+  },
+
+  "faq": {
+    "heading": "Häufige Fragen",
+    "items": [
+      { "question": "Was ist Kraftigo?",                                                          "answer": "Kraftigö ist eine Plattform, die Sie mit erfahrenen Handwerkern für Ihre Aufgaben verbindet." },
+      { "question": "Wer ist ein Krafter?",                                                       "answer": "Ein Krafter ist ein qualifizierter und verifizierter Handwerker oder Dienstleister auf unserer Plattform." },
+      { "question": "Woher weiß ich, dass ein Krafter der ist, der er behauptet zu sein?",        "answer": "Alle Krafter werden durch unseren Überprüfungsprozess verifiziert." },
+      { "question": "Was kostet es?",                                                             "answer": "Die Registrierung bei Kraftigö ist völlig kostenlos. Sie zahlen nur für die Leistungen, die Sie buchen." },
+      { "question": "Ist Kraftigo in meiner Nähe verfügbar?",                                    "answer": "Wir weiten unsere Dienste derzeit aus. Tragen Sie sich in unsere Warteliste ein, um benachrichtigt zu werden, wenn wir in Ihrer Region starten." },
+      { "question": "Kann ich Krafter werden?",                                                   "answer": "Ja. Handwerker können sich frühzeitig registrieren, indem sie unserer Warteliste beitreten." },
+      { "question": "Muss ich Deutsch sprechen?",                                                 "answer": "Unsere Plattform unterstützt mehrere Sprachen, und Sie können mit Kraftern in Ihrer bevorzugten Sprache kommunizieren." },
+      { "question": "Gibt es eine App?",                                                          "answer": "Wir arbeiten an mobilen Apps für iOS und Android." },
+      { "question": "Was, wenn meine Aufgabe nicht auf der Liste steht?",                        "answer": "Sie können eine individuelle Aufgabenanfrage erstellen, und relevante Krafter werden benachrichtigt." },
+      { "question": "Wie kann ich Kontakt aufnehmen?",                                           "answer": "Sie können unser Support-Team über das Kontaktformular auf unserer Website erreichen." }
+    ]
+  },
+
+  "footer": {
+    "tagline": "kraftigo gestaltet neu, wie lokale Dienstleistungen gefunden und verwaltet werden. Qualitativ hochwertige Hilfe ist nur wenige Klicks entfernt",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "about": "Über uns",
+    "career": "Karriere",
+    "blog": "Blog",
+    "becomeTasker": "Krafter werden",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutzerklärung",
+    "cookie": "Cookie-Richtlinie"
+  },
+
+  "about": {
+    "heading": "Was Kraftigo\nauszeichnet",
+    "intro": "In jeder Nachbarschaft benötigen beschäftigte Menschen alltägliche Hilfe, sind jedoch von denjenigen getrennt, die bereit sind zu helfen. Kraftigo ist die App, die sie endlich zusammenbringt.",
+    "section1Title": "Wir haben die Lücke erkannt und beschlossen, sie zu schließen",
+    "section1Body": "Schauen Sie sich in Ihrer eigenen Gemeinschaft um. Wir haben ein alltägliches Problem erkannt, das schlicht ignoriert wurde: Einfache Aufgaben erledigen zu lassen war ungemein stressig, während flexible Möglichkeiten, zusätzliches Geld zu verdienen, kaum zugänglich waren. Die Nachfrage nach Hilfe war überall vorhanden, und fähige Personen waren direkt nebenan, doch das System, das sie verband, funktionierte nicht.\n\nWir konnten nicht einfach zusehen. Wir haben diese Lücke erkannt und beschlossen, sie zu schließen. Wir haben Kraftigo nicht nur als App entwickelt, sondern als Brücke zwischen Menschen, die Hilfe benötigen, und Menschen, die etwas verdienen möchten.",
+    "section2Title": "Eine Plattform für echte Menschen",
+    "section2Body": "Wir setzen uns leidenschaftlich dafür ein, unsere Gemeinschaft zu stärken. Warum Kraftigo wählen? Weil wir das nicht für große Konzerne entwickelt haben, sondern für Sie. Wir erschließen eine neue lokale Wirtschaft, die für Privatpersonen und Studierende gedacht ist, die ihre Freizeit sinnvoll nutzen möchten. Ob Sie Ihr Haus reinigen lassen, Ihren Garten in Ordnung bringen oder selbst Geld verdienen möchten, indem Sie jemandem helfen, Kraftigo ist darauf ausgelegt, Ihr Leben spürbar zu verbessern.",
+    "checkTitle": "Wir haben die Lücke erkannt und beschlossen, sie zu schließen",
+    "check1": "Vollständige Transparenz: Mit unserem Live-Arbeitszeiterfassungssystem gibt es keine Unklarheiten. Sie wissen genau, wie lange eine Aufgabe gedauert hat, was eine faire Vergütung und Sicherheit gewährleistet.",
+    "check2": "Maximale Flexibilität: Wir zwingen Sie in keine starren Kategorien. Benötigen Sie etwas sehr Spezifisches? Unsere Funktion \"Custom Kraft\" ermöglicht es Ihnen, genau das anzufordern, was Sie brauchen, zu Ihren eigenen Bedingungen.",
+    "check3": "Ein nahtloses Ökosystem: Möchten Sie heute eine Hilfe beauftragen und morgen als Krafter Geld verdienen? Das ist möglich. Unsere App ermöglicht es Ihnen, mühelos zwischen dem Erhalten von Hilfe und dem Verdienen von Geld zu wechseln.",
+    "stat1Label": "Unter",
+    "stat1Value": "3 Minuten",
+    "stat1Desc": "Die angestrebte Zeit, um Ihre Aufgabe mit einem verifizierten, einsatzbereiten Krafter zu verbinden.",
+    "stat2Value": "100%",
+    "stat2Label": "der Trinkgelder behalten",
+    "stat2Desc": "Jeder Cent eines Trinkgeldes geht direkt in die digitale Geldbörse des Krafters, denn er hat es verdient.",
+    "stat3Value": "0 €",
+    "stat3Label": "Versteckte Gebühren",
+    "stat3Desc": "Vollständige Preistransparenz von dem Moment der Buchung bis zur letzten Sekunde. Was Sie sehen, das zahlen Sie.",
+    "joinTitle": "Werden Sie Teil der Bewegung",
+    "joinBody": "Wir glauben, dass jeder Mensch eine stressfreie Möglichkeit verdient, seine Zeit zu verwalten und fair zu verdienen. Wir freuen uns, Sie in die Kraftigo-Community einzuladen. Lassen Sie uns gemeinsam Dinge erledigen."
+  },
+
+  "help": {
+    "heading": "Hilfe, jederzeit und überall!",
+    "searchPlaceholder": "Hilfefragen oder Themen suchen.",
+    "sendMail": "E-Mail senden",
+    "call": "Anrufen",
+    "whatsapp": "WhatsApp",
+    "faqLabel": "Häufig gestellte Fragen",
+    "faqHeading": "Ihre Fragen, beantwortet.",
+    "categories": ["Allgemein", "Auftraggeber", "Krafter"],
+    "faqData": {
+      "Allgemein": [
+        { "question": "Was ist Kraftigö?",                                    "answer": "Kraftigö ist eine Plattform, die Personen mit vertrauenswürdigen lokalen Handwerkern für verschiedene Dienstleistungen verbindet." },
+        { "question": "Welche Dienstleistungen finde ich auf Kraftigö?",     "answer": "Sie finden Reinigungskräfte, Gärtner, Nachhilfelehrer, Friseure und vieles mehr." },
+        { "question": "Wo ist Kraftigö verfügbar?",                          "answer": "Wir weiten unsere Dienste derzeit auf 4 Städte aus, mit Schwerpunkt auf lokale Nachbarschaften." },
+        { "question": "Wie stellt Kraftigö Vertrauen und Sicherheit sicher?","answer": "Jede Fachkraft durchläuft einen Verifizierungsprozess und eine Identitätsprüfung." },
+        { "question": "Muss ich Deutsch sprechen, um Kraftigö zu nutzen?",   "answer": "Nein. Die Plattform unterstützt mehrere Sprachen, um sie für Kunden und Handwerker aus verschiedenen Hintergründen zugänglich zu machen." }
+      ],
+      "Auftraggeber": [
+        { "question": "Wie buche ich eine Dienstleistung?", "answer": "Wählen Sie eine Dienstleistung, vergleichen Sie Krafter und klicken Sie auf Buchen." },
+        { "question": "Wie bezahle ich?",                   "answer": "Zahlungen werden sicher über die Plattform abgewickelt." }
+      ],
+      "Krafter": [
+        { "question": "Wie registriere ich mich als Krafter?", "answer": "Klicken Sie auf Krafter werden in der Navigation oder im Footer." },
+        { "question": "Wann werde ich bezahlt?",               "answer": "Zahlungen werden freigegeben, nachdem die Dienstleistung als abgeschlossen markiert wurde." }
+      ]
+    }
+  },
+
+  "press": {
+    "categories": ["Alle", "Produktupdates", "Pressemitteilungen", "Marketing", "Blog"],
+    "noArticles": "Keine Artikel in dieser Kategorie gefunden.",
+    "articles": [
+      {
+        "title": "Kraftigo sichert sich 600 Registrierungen auf der Warteliste",
+        "date": "28. Feb 2026",
+        "description": "Suchen Sie nach Ideen für Familienaktivitäten in NYC in diesem Herbst? Hier ist ein Leitfaden zu den besten Broadway-Shows und Musicals, die Sie diesen Herbst sehen sollten.",
+        "readTime": "2 Min. Lesezeit",
+        "image": "/images/press1.png",
+        "categoryIndex": 1
+      },
+      {
+        "title": "Kraftigo startet in 4 Städten",
+        "date": "28. Feb 2026",
+        "description": "Suchen Sie nach Ideen für Familienaktivitäten in NYC in diesem Herbst? Hier ist ein Leitfaden zu den besten Broadway-Shows und Musicals, die Sie diesen Herbst sehen sollten.",
+        "readTime": "2 Min. Lesezeit",
+        "image": "/images/press2.jpg",
+        "categoryIndex": 1
+      }
+    ]
+  },
+
+  "privacy": {
+    "sidebarTitle": "Auf dieser Seite",
+    "sections": [
+      "Datenschutz- und Cookie-Richtlinie",
+      "Richtlinie zur akzeptablen Nutzung",
+      "Streitbeilegungsrichtlinie",
+      "Krafter-Dienstleistungsvertrag",
+      "Datenverarbeitungsvertrag",
+      "Dienstleister"
+    ],
+    "content": [
+      "Kraftigo Servicess Limited (\"Kraftigo\", \"Unternehmen\", \"wir\", \"uns\" oder \"unser\") bietet eine Online-Dienstleistungsplattform sowie einen Bereitstellungs- und Supportservice für Point-of-Sale (PoS)-Terminals an, die es Nutzern ermöglichen, nahtlose, stressfreie Dienstleistungen für gewünschte Waren und Dienstleistungen online und an physischen Einzelhandelsstandorten vorzunehmen. Bei Kraftigo verpflichten wir uns, die Privatsphäre und Sicherheit der personenbezogenen Daten unserer Verbraucher und Nutzer zu schützen. Wir setzen uns für Transparenz, Verantwortlichkeit und Vertraulichkeit Ihrer Daten ein. Aus diesem Grund beschreibt unsere Datenschutz- und Cookie-Richtlinie (\"Datenschutzrichtlinie\"), wie wir personenbezogene Daten von Website-Besuchern, Kraftigo-Nutzern und/oder Anbietern (\"betroffene Personen\"), die unsere Dienste in Anspruch nehmen, erfassen, verwenden, speichern, weitergeben und schützen. Sie gilt für unsere Website und alle damit verbundenen Seiten, Anwendungen, Dienste und Tools (zusammen unsere \"Dienste\").",
+      "Obwohl unsere Dienste in erster Linie für Unternehmen und Organisationen (\"Händler\") konzipiert sind, erkennen wir an, dass auch einzelne Verbraucher über Händler oder Website-Besuche mit uns interagieren können. Wir verpflichten uns zur verantwortungsvollen Verarbeitung personenbezogener Daten für alle Beteiligten. Wir verarbeiten personenbezogene Daten im Allgemeinen auf Anweisung und im Namen von Händlern. Wenn wir dies tun, handeln wir als Dienstleister oder \"Datenverarbeiter\" für diese Händler, aber wir kontrollieren nicht und sind nicht verantwortlich für die Datenschutzpraktiken dieser Händler.",
+      "Wenn Sie Kunde eines Kraftigo-Händlers sind, sollten Sie die Datenschutzrichtlinie dieses Händlers lesen und alle Datenschutzanfragen an diesen Händler richten. Wenn Sie ein Händler sind, lesen Sie bitte die Datenschutzrichtlinie für Händler. Diese Datenschutzrichtlinie gilt nicht für Dienste, die nicht Eigentum von Kraftigo sind oder von Kraftigo kontrolliert werden, einschließlich Websites von Dritten und die Dienste von Kraftigo-Händlern. Diese Datenschutzrichtlinie gilt für alle Arten von Systemen, Abläufen und Prozessen innerhalb der Kraftigo-Umgebung, die die Verarbeitung personenbezogener Daten beinhalten. Kraftigo ist ein Stripe-Unternehmen; weitere Informationen zu den Datenschutzpraktiken von Stripe finden Sie in der Stripe-Datenschutzrichtlinie unter"
+    ]
+  }
+}

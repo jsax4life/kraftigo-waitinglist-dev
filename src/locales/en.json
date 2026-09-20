@@ -1,0 +1,219 @@
+{
+  "ticker": "Kraftigö is in beta testing, sign up to join the waitlist",
+
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "press": "Press",
+    "termsOfUse": "Terms of use",
+    "help": "Help"
+  },
+
+  "hero": {
+    "heading1": "Verified local talent,",
+    "heading2a": "as close as your own",
+    "heading2b": "neighborhood.",
+    "subheading": "Everyday tasks, handled by verified people from your own area.",
+    "cta": "Find a krafter"
+  },
+
+  "supportedBy": "SUPPORTED BY",
+
+  "why": {
+    "label": "Why Kraftigo",
+    "card1Title": "Close by, by design.",
+    "card1Body": "Matching starts at your address \nand works outward. The person \nwho shows up is genuinely from \nyour area, not just someone \nwilling to make the drive.",
+    "card2Title": "Verified before you \nsee them.",
+    "card2Body": "Every Krafter completes identity \nverification before their profile \ngoes live. Where the work calls \nfor it, we also check \nqualifications, insurance and \nbusiness registration.",
+    "card3Title": "Speak your language.",
+    "card3Body": "Our Krafters come from local and \ninternational communities, so \nyou can often find someone you \ncan talk to comfortably.",
+    "h2": "Finding someone you can trust should not take three days and four phone calls.",
+    "p1": "Right now the options are a search engine full of listings from three towns over, a community group where anyone can claim anything, or asking around and waiting for a friend to get back to you. You end up choosing between a stranger you know nothing about and a delay you did not plan for.",
+    "p2": "Meanwhile, people a few streets away have exactly the skill you need and no straightforward way to reach you.",
+    "quote": "Kraftigo starts where you are. You see who is nearby, you see what they have been verified for, and you talk to them directly before anything is agreed."
+  },
+
+  "features": {
+    "sectionHeading": "What can you get \nhelp with?",
+    "sectionBody": "The everyday things that pile up faster than \nyou can get to them. Cleaning, gardening, \nmoving, and the rest. Whatever it is, \nsomeone nearby can probably do it.",
+    "cards": [
+      { "title": "Errands",              "desc": "Shop runs, parcel returns, pickups and the small jobs that pile up." },
+      { "title": "Gardening",            "desc": "Lawn care, planting, weeding, hedge trimming and seasonal garden work." },
+      { "title": "Moving and transport", "desc": "Packing, lifting, loading, or getting things from one place to another." },
+      { "title": "Cleaning",             "desc": "Deep cleaning, regular house keeping, and moving out cleans." },
+      { "title": "Outdoor",              "desc": "Patio cleaning, gutter clearing, and exterior house maintenance." }
+    ],
+    "moreTitle": "and so\nmuch more.",
+    "moreBody": "Whatever the task, we've got someone for it."
+  },
+
+  "howItWorks": {
+    "heading": "How it works",
+    "clientTab": "Client",
+    "krafterTab": "Krafter",
+    "findKrafter": "Find a Krafter",
+    "client": [
+      { "id": "01", "title": "Say what you need.",  "description": "Describe the task and where you are." },
+      { "id": "02", "title": "See who is nearby.",  "description": "Browse verified Krafters close to you, with their skills, languages, availability and reviews." },
+      { "id": "03", "title": "Talk it through.",    "description": "Message directly and agree on scope, timing and price before anything is confirmed." },
+      { "id": "04", "title": "Get it done.",        "description": "Book the slot and get on with your day." }
+    ],
+    "krafter": [
+      { "id": "01", "title": "Sign up and add skills.",  "description": "Create your profile and let people know what you can do." },
+      { "id": "02", "title": "Find available krafts.",   "description": "Browse the marketplace or get booked directly by clients." },
+      { "id": "03", "title": "Complete the work.",       "description": "Show up, do a great job, and build your reputation." },
+      { "id": "04", "title": "Get paid securely.",       "description": "Receive your earnings directly when you fulfill orders." }
+    ]
+  },
+
+  "trust": {
+    "heading": "Trust should not be \nan afterthought.",
+    "body": "You are letting someone into your home, or handing them something that matters. That deserves more than a listing and a phone number.",
+    "features": [
+      { "title": "Identity verification, every Krafter.",     "desc": "Nobody appears on Kraftigo without completing identity verification first." },
+      { "title": "Credentials where the work calls for it.",  "desc": "Qualifications, insurance and business registration are checked and shown where they are relevant." },
+      { "title": "Profiles you can actually read.",           "desc": "Skills, languages, service area and completed work, so you know who you are considering before you decide." },
+      { "title": "Ratings and feedback.",                     "desc": "Reviews come from finished jobs, which keeps reputation tied to real work." },
+      { "title": "Agree first, book after.",                  "desc": "Talk through the task and settle the details before anything is confirmed." }
+    ]
+  },
+
+  "location": {
+    "heading": "Live in Soest. Growing one city at a time.",
+    "body": "A city goes live on Kraftigo only when enough Krafters are active there for \"close to you\" to actually mean close to you. Building that density takes time, and we would rather be genuinely useful in one place than thinly present in ten. Soest is where we started."
+  },
+
+  "join": {
+    "heading": "Turn a skill into\nsteady local work.",
+    "body": "Kraftigo is built for people who already have something useful to offer. Students with hours between lectures. People who have recently arrived and are building a footing here. Locals whose weekend skill is better than most people's day job. You decide what you offer, when you are available and how far you are willing to go.",
+    "cta": "Become a Krafter",
+    "benefits": [
+      { "title": "Work close to home.",                      "description": "Requests come from your own area, so travel time does not eat into your day." },
+      { "title": "Set your own terms.",                      "description": "Your services, your availability, your rates, agreed directly with the client." },
+      { "title": "Get found for what you actually do.",      "description": "People search for the specific help they need, and your profile shows them you can do it." },
+      { "title": "Build a reputation that stays with you.",  "description": "Verification and completed jobs build a profile that keeps bringing work." },
+      { "title": "Work in your own language.",               "description": "Connect with clients from both local and international communities." }
+    ]
+  },
+
+  "faq": {
+    "heading": "Questions",
+    "items": [
+      { "question": "What is Kraftigo?",                                        "answer": "Kraftigö is a platform connecting you with skilled artisans for your tasks." },
+      { "question": "Who is a Krafter?",                                        "answer": "A Krafter is a skilled and verified artisan or service provider on our platform." },
+      { "question": "How do I know a Krafter is who they say they are?",        "answer": "All Krafters are verified through our rigorous screening process." },
+      { "question": "What does it cost?",                                        "answer": "Joining Kraftigö is completely free. You only pay for the services you book." },
+      { "question": "Is Kraftigo available where I live?",                      "answer": "We are currently expanding our services. Join our waitlist to be notified when we launch in your area." },
+      { "question": "Can I become a Krafter?",                                  "answer": "Yes! Artisans can register early by joining our waitlist." },
+      { "question": "Do I need to speak German?",                               "answer": "Our platform supports multiple languages, and you can communicate with Krafters in your preferred language." },
+      { "question": "Is there an app?",                                         "answer": "We are working on dedicated mobile apps for iOS and Android." },
+      { "question": "What if my task is not on the list?",                      "answer": "You can create a custom task request, and relevant Krafters will be notified." },
+      { "question": "How do I get in touch?",                                   "answer": "You can reach out to our support team via the contact form on our website." }
+    ]
+  },
+
+  "footer": {
+    "tagline": "kraftigo is redesigning how local services are found and managed, quality help is just a few clicks away",
+    "company": "Company",
+    "legal": "Legal",
+    "about": "About us",
+    "career": "Career",
+    "blog": "Blog",
+    "becomeTasker": "Become a tasker",
+    "terms": "Terms of service",
+    "privacy": "Privacy policy",
+    "cookie": "Cookie Policy"
+  },
+
+  "about": {
+    "heading": "What Makes\nKraftigo\nStand Out",
+    "intro": "In every neighborhood, busy people need everyday help but remain disconnected from those ready to assist. Kraftigo is the app that finally brings them together.",
+    "section1Title": "We Saw The Gap, And We Decided To Fix It",
+    "section1Body": "Take a look around your own community. We saw a glaring, everyday problem that was simply being ignored: getting simple tasks done was overwhelmingly stressful, while finding flexible ways to earn extra money was far too difficult. The demand for help was everywhere, and the supply of eager, capable individuals was right next door but the system connecting them was completely broken.\n\nWe couldn't just stand by. We saw this gap, and we decided to fix it with purpose and passion. We built Kraftigo not just as an app, but as a living bridge between the people who need a hand and the people who want to earn.",
+    "section2Title": "A Platform Built For Real People",
+    "section2Body": "We are passionate about empowering our community. Why choose us? Because we didn't build this for massive corporations; we built this for you. We are unlocking a new local economy designed for ordinary people and students who want to make something of their spare time. Whether you need your house cleaned, your garden sorted, or you want to earn real money by helping someone out, Kraftigo is designed to make your life tangibly better.",
+    "checkTitle": "We Saw The Gap, And We Decided To Fix It",
+    "check1": "Total Transparency: With our live on-the-job time tracking, there's no guessing. You know exactly how much time a task took, down to the second, ensuring fair pay and peace of mind.",
+    "check2": "Ultimate Flexibility: We don't force you into rigid boxes. Need something highly specific? Our \"Custom Kraft\" feature lets you request exactly what you need, on your own terms and budget.",
+    "check3": "A Seamless Ecosystem: Want to hire a helper today and earn money as a Krafter tomorrow? You can. Our app lets you flip between getting help and earning cash, keeping the value right here in the community.",
+    "stat1Label": "Under",
+    "stat1Value": "3 Minutes",
+    "stat1Desc": "The target time it takes to seamlessly match your requested task with a verified, ready-to-work Krafter.",
+    "stat2Value": "100%",
+    "stat2Label": "of Tips Kept",
+    "stat2Desc": "Every single cent of a tip goes directly into the Krafter's digital wallet, because they earned it.",
+    "stat3Value": "£0",
+    "stat3Label": "Hidden Fees",
+    "stat3Desc": "Total pricing transparency from the moment you book to the second the live timer stops. What you see is what you pay.",
+    "joinTitle": "Join The Movement",
+    "joinBody": "We believe that everyone deserves a stress-free way to manage their time and a fair way to earn. We are thrilled to invite you to join the Kraftigo community. Let's get things done, together."
+  },
+
+  "help": {
+    "heading": "Get Help, Anywhere, Anytime!",
+    "searchPlaceholder": "Search help questions, or topics.",
+    "sendMail": "Send us a mail",
+    "call": "Call",
+    "whatsapp": "Whatsapp",
+    "faqLabel": "Frequently Asked Questions",
+    "faqHeading": "Your Questions, Answered.",
+    "categories": ["General", "Client", "Krafter"],
+    "faqData": {
+      "General": [
+        { "question": "What is Kraftigö?",                          "answer": "Kraftigö is a platform connecting people with trusted local artisans for various services." },
+        { "question": "What services can I find on Kraftigö?",      "answer": "You can find cleaners, gardeners, tutors, hair stylists, and more." },
+        { "question": "Where is Kraftigö available?",               "answer": "Currently we are expanding across 4 cities with a focus on local neighborhoods." },
+        { "question": "How does Kraftigö ensure trust and safety?", "answer": "Every professional goes through a verification process and identity check." },
+        { "question": "Do I need to speak German to use Kraftigö?", "answer": "No. The platform supports multiple languages to make it accessible to both customers and artisans from different backgrounds." }
+      ],
+      "Client": [
+        { "question": "How do I book a service?", "answer": "Choose a service, compare krafters, and click book!" },
+        { "question": "How do I pay?",            "answer": "Payments are processed securely through the platform." }
+      ],
+      "Krafter": [
+        { "question": "How do I sign up as a Krafter?", "answer": "Click 'Become a Krafter' in the nav or footer." },
+        { "question": "When do I get paid?",             "answer": "Payments are released after the service is marked complete." }
+      ]
+    }
+  },
+
+  "press": {
+    "categories": ["All", "Product Updates", "Press Releases", "Marketing", "Blog"],
+    "noArticles": "No articles found in this category.",
+    "articles": [
+      {
+        "title": "Kraftigo Secures 600 registrations on waitlist",
+        "date": "Feb 28, 2026",
+        "description": "Need ideas for family activities in NYC this fall? Here's a guide to the best Broadway shows and musicals to see this autumn.",
+        "readTime": "2 min read",
+        "image": "/images/press1.png",
+        "categoryIndex": 1
+      },
+      {
+        "title": "Kraftigo set to Launch in 4 cities",
+        "date": "Feb 28, 2026",
+        "description": "Need ideas for family activities in NYC this fall? Here's a guide to the best Broadway shows and musicals to see this autumn.",
+        "readTime": "2 min read",
+        "image": "/images/press2.jpg",
+        "categoryIndex": 1
+      }
+    ]
+  },
+
+  "privacy": {
+    "sidebarTitle": "On this page",
+    "sections": [
+      "Privacy & Cookie Policy",
+      "Acceptable Use Policy",
+      "Dispute Policy",
+      "Krafter Services Agreement",
+      "Data Processing Agreement",
+      "Service Providers"
+    ],
+    "content": [
+      "Kraftigo Servicess Limited (\"Kraftigo\", \"Company\", \"we\", \"us\" or \"our\") offers an online services platform and a Point-of-Sale (PoS) Terminal deployment and support service that allows Users to make seamless, stress-free servicess for desired goods and services online and at physical retail locations. At Kraftigo, we are committed to protecting the privacy and security of our consumers' and users' personal data. We are committed to transparency, accountability and confidentiality of your data. This is why our Privacy and Cookie Policy (\"Privacy Policy\") describes how we collect, use, store, share, and protect personal data from Website Visitors, Kraftigo Users, and/or Vendors (\"Data Subjects\") who engage with our services. It applies to our website and all related sites, applications, services and tools (collectively, our \"Services\").",
+      "While our services are primarily designed for businesses and organisations (\"Merchants\"), we recognise that individual consumers may interact with us through Merchants or website visits. We are committed to responsibly processing personal data for everyone involved. We generally process personal data at the direction of and on behalf of Merchants. When we do, we do so as a service provider or a \"Data Processor\" to those Merchants, but we do not control and are not responsible for the privacy practices of those Merchants.",
+      "If you are a Customer of a Kraftigo Merchant, you should read that Merchant's Privacy Policy and direct any privacy inquiries to that Merchant. If you are a Merchant, please see the Merchant Privacy Policy. This Privacy Policy does not apply to services not owned or controlled by Kraftigo, including third-party websites and the services of Kraftigo's Merchants. This Privacy Policy applies to all forms of systems, operations and processes within the Kraftigo environment that involve the processing of personal data. Kraftigo is a Stripe company; for more information about Stripe's privacy practices, see the Stripe Privacy Policy"
+    ]
+  }
+}

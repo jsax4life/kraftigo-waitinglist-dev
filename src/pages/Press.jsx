@@ -2,42 +2,23 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PressModal from "../components/PressModal";
+import { useLang } from "../lib/LanguageContext";
 
 const Press = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const { t } = useLang();
+  const [activeCatIndex, setActiveCatIndex] = useState(0);
 
-  const pressNav = [
-    { title: "All" },
-    { title: "Product Updates" },
-    { title: "Press Releases" },
-    { title: "Marketing" },
-    { title: "Blog" },
-  ];
+  const categories = t("press.categories");
+  const activeCategory = categories[activeCatIndex];
 
-  const pressData = [
-    {
-      title: "Kraftigo Secures 600 registrations on waitlist",
-      date: "Feb 28, 2026",
-      description:
-        "Need ideas for family activities in NYC this fall? Here's a guide to the best Broadway shows and musicals to see this autumn.",
-      readTime: "2 min read",
-      image: "/images/press1.png",
-      pressType: "Product Updates",
-    },
-    {
-      title: "Kraftigo set to Launch in 4 cities",
-      date: "Feb 28, 2026",
-      description:
-        "Need ideas for family activities in NYC this fall? Here's a guide to the best Broadway shows and musicals to see this autumn.",
-      readTime: "2 min read",
-      image: "/images/press2.jpg",
-      pressType: "Product Updates",
-    },
-    // Add more press data as needed
-  ];
+  const pressDataRaw = t("press.articles");
+  const pressData = pressDataRaw.map((article) => ({
+    ...article,
+    pressType: categories[article.categoryIndex]
+  }));
 
-  const filteredPressData =
-    activeCategory === "All"
+  const filteredData =
+    activeCatIndex === 0
       ? pressData
       : pressData.filter((item) => item.pressType === activeCategory);
 
@@ -46,23 +27,23 @@ const Press = () => {
       <Navbar />
       <section className="mx-4 md:mx-40 my-20 md:my-40">
         <div className="flex gap-7 pb-2 mb-10 overflow-x-auto whitespace-nowrap scrollbar-hide">
-          {pressNav.map((item, index) => (
+          {categories.map((cat, i) => (
             <button
-              key={index}
-              onClick={() => setActiveCategory(item.title)}
+              key={cat}
+              onClick={() => setActiveCatIndex(i)}
               className={`pb-2 transition-all cursor-pointer ${
-                activeCategory === item.title
+                activeCatIndex === i
                   ? "text-[#FF6600] border-b-2 border-[#FF6600] font-semibold"
                   : "hover:text-[#FF6600]"
               }`}
             >
-              {item.title}
+              {cat}
             </button>
           ))}
         </div>
         <div className="space-y-10">
-          {filteredPressData.length > 0 ? (
-            filteredPressData.map((press, index) => (
+          {filteredData.length > 0 ? (
+            filteredData.map((press, index) => (
               <PressModal
                 key={index}
                 pressType={press.pressType}
@@ -75,7 +56,7 @@ const Press = () => {
             ))
           ) : (
             <div className="text-center py-20 text-gray-500">
-              No articles found in this category.
+              {t("press.noArticles")}
             </div>
           )}
         </div>

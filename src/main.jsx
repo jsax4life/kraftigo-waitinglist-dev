@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { LanguageProvider } from './lib/LanguageContext.jsx'
 import './index.css'
 import App from './App.jsx'
 import Home from './pages/Home.jsx'
@@ -12,19 +13,21 @@ import Help from './pages/Help.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,         
+    element: <App />,
     children: [
-      { index: true, element: <Home /> },      
-      { path: 'about', element: <About /> },   
-      { path: 'press', element: <Press /> },   
-      { path: 'privacy', element: <Privacy /> }, 
-      { path: 'help', element: <Help /> },     
+      { index: true, element: <Home /> },
+      { path: 'about', element: <About /> },
+      { path: 'press', element: <Press /> },
+      { path: 'privacy', element: <Privacy /> },
+      { path: 'help', element: <Help /> },
     ],
   },
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <LanguageProvider>
+      <RouterProvider router={router} />
+    </LanguageProvider>
   </StrictMode>,
 )
