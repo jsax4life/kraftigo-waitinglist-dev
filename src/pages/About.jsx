@@ -116,7 +116,7 @@ const About = () => {
 
       <Waitlist />
       <div className="py-15" />
-      <CtaBanner />
+      {/* <CtaBanner /> */}
       <Footer />
     </main>
   );

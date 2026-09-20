@@ -113,7 +113,7 @@ const Home = () => {
             {t("supportedBy")}
           </p>
           <motion.div
-            className="grid grid-cols-4 md:flex md:flex-wrap md:justify-center gap-4 md:gap-12 max-w-2xl md:max-w-none mx-auto"
+            className="grid grid-cols-3 md:flex md:flex-wrap md:justify-center gap-4 md:gap-12 max-w-2xl md:max-w-none mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -124,9 +124,9 @@ const Home = () => {
           >
             {/* First 4 logos — top row on mobile (col-span-1 each = 4 cols) */}
             {[
-              { href: "https://season5.law/",          src: "/pat1.svg", alt: "Season 5 Law" },
-              { href: "https://www.astagroup.com/",    src: "/pat2.svg", alt: "Asta Group" },
-              { href: "https://www.kreis-soest.de/",   src: "/pat3.svg", alt: "Kreis Soest" },
+              // { href: "https://season5.law/",          src: "/pat1.svg", alt: "Season 5 Law" },
+              // { href: "https://www.astagroup.com/",    src: "/pat2.svg", alt: "Asta Group" },
+              // { href: "https://www.kreis-soest.de/",   src: "/pat3.svg", alt: "Kreis Soest" },
               { href: "https://startbahn25.de/",       src: "/pat4.svg", alt: "Startbahn 25" },
             ].map(({ href, src, alt }) => (
               <motion.a
@@ -164,7 +164,6 @@ const Home = () => {
               </motion.a>
             ))}
           </motion.div>
-
           <Why />
         </section>
         <AppFeatures />
