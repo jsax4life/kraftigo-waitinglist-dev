@@ -1,8 +1,11 @@
 import { Toaster } from "sonner";
 import { Outlet, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLang } from "./lib/LanguageContext";
 
 const Ticker = () => {
+  const { t } = useLang();
+  const text = t("ticker");
   return (
     <div className="w-full bg-[#FFD700] text-black overflow-hidden flex whitespace-nowrap py-3">
       <style>
@@ -18,12 +21,12 @@ const Ticker = () => {
       </style>
       <div className="animate-ticker flex items-center space-x-12 px-10">
         {Array(10)
-          .fill("Kraftigö is in beta testing, sign up to join the waitlist")
-          .map((text, i) => (
+          .fill(text)
+          .map((t, i) => (
             <div key={i} className="flex items-center gap-12 shrink-0">
               <div className="w-2 h-2 bg-black"></div>
               <span className="font-medium text-[15px] tracking-wide">
-                {text}
+                {t}
               </span>
             </div>
           ))}
