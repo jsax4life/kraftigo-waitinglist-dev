@@ -37,9 +37,9 @@ const Footer = () => {
           <div className="md:ml-18">
             <h3 className="font-bold text-lg mb-4">{t("footer.legal")}</h3>
             <ul className="space-y-2 text-sm text-black">
-              <li><a href="/privacy" className="hover:text-[#FF6600] transition-colors">{t("footer.terms")}</a></li>
-              <li><a href="/privacy" className="hover:text-[#FF6600] transition-colors">{t("footer.privacy")}</a></li>
-              <li><a href="/privacy" className="hover:text-[#FF6600] transition-colors">{t("footer.cookie")}</a></li>
+              <li><a href="/privacy#customer-terms" className="hover:text-[#FF6600] transition-colors">{t("footer.terms")}</a></li>
+              <li><a href="/privacy#privacy-policy" className="hover:text-[#FF6600] transition-colors">{t("footer.privacy")}</a></li>
+              <li><a href="/privacy#privacy-policy" className="hover:text-[#FF6600] transition-colors">{t("footer.cookie")}</a></li>
             </ul>
           </div>
         </div>
