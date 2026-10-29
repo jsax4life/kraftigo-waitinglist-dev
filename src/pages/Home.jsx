@@ -132,9 +132,9 @@ const Home = () => {
               // { href: "https://www.astagroup.com/",    src: "/pat2.svg", alt: "Asta Group" },
               // { href: "https://www.kreis-soest.de/",   src: "/pat3.svg", alt: "Kreis Soest" },
               {
-                href: "https://startbahn25.de/",
-                src: "/pat4.svg",
-                alt: "Startbahn 25",
+                href: "https://startbahn27.de/",
+                src: "/images/pat7.png",
+                alt: "Startbahn 27",
               },
             ].map(({ href, src, alt }) => (
               <motion.a
@@ -155,7 +155,7 @@ const Home = () => {
                 <img
                   src={src}
                   alt={alt}
-                  className="w-20 h-20 md:w-45 md:h-45"
+                  className="w-20 h-20 md:w-50 md:h-50"
                 />
               </motion.a>
             ))}
