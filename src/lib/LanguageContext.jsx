@@ -8,7 +8,7 @@ const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {
   const [lang, setLang] = useState(() => {
-    return localStorage.getItem("kraftigo-lang") || "en";
+    return localStorage.getItem("kraftigo-lang") || "de";
   });
 
   const toggle = useCallback(() => {

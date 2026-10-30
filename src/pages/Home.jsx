@@ -52,7 +52,7 @@ const Home = () => {
     <div>
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[3px] bg-[#FF6600] origin-left z-[9999]"
+        className="fixed top-0 left-0 right-0 h-0.75 bg-[#FF6600] origin-left z-9999"
         style={{ scaleX }}
       />
       <Navbar />
@@ -67,12 +67,14 @@ const Home = () => {
           >
             <motion.p
               variants={heroItem}
-              className="text-[#000000CC] text-[35px] md:text-[60px] font-garet font-bold leading-[35px] md:leading-[60px] tracking-[-2px]"
+              className="text-[#000000CC] text-[35px] md:text-[60px] font-garet font-bold leading-8.75 md:leading-15 tracking-[-2px]"
             >
               {t("hero.heading1")}
               <br />{" "}
               <span className="text-[#00000066]">
-                {t("hero.heading2a")}<br />{t("hero.heading2b")}
+                {t("hero.heading2a")}
+                <br />
+                {t("hero.heading2b")}
               </span>
             </motion.p>
             <motion.p
@@ -86,7 +88,7 @@ const Home = () => {
               href="https://www.kraftigo.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[146px] h-[41px] bg-[#FF6600] rounded-xl text-white text-sm hover:bg-[#e55a00] transition-colors flex items-center justify-center"
+              className="w-36.5 h-10.25 bg-[#FF6600] rounded-xl text-white text-sm hover:bg-[#e55a00] transition-colors flex items-center justify-center"
             >
               {t("hero.cta")}
             </motion.a>
@@ -108,7 +110,7 @@ const Home = () => {
         </div>
 
         {/* ── Neighborhood text + HowItWorks ── */}
-        <section className="flex flex-col gap-2 md:gap-[33px]">
+        <section className="flex flex-col gap-2 md:gap-8.25">
           <p className="text-center text-[#0B0B0B66] text-[12px] font-medium tracking-[1.68px]">
             {t("supportedBy")}
           </p>
@@ -119,7 +121,9 @@ const Home = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={{
               hidden: {},
-              visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+              visible: {
+                transition: { staggerChildren: 0.1, delayChildren: 0.05 },
+              },
             }}
           >
             {/* First 4 logos — top row on mobile (col-span-1 each = 4 cols) */}
@@ -127,7 +131,11 @@ const Home = () => {
               // { href: "https://season5.law/",          src: "/pat1.svg", alt: "Season 5 Law" },
               // { href: "https://www.astagroup.com/",    src: "/pat2.svg", alt: "Asta Group" },
               // { href: "https://www.kreis-soest.de/",   src: "/pat3.svg", alt: "Kreis Soest" },
-              { href: "https://startbahn25.de/",       src: "/pat4.svg", alt: "Startbahn 25" },
+              {
+                href: "https://startbahn27.de/",
+                src: "/images/pat7.png",
+                alt: "Startbahn 27",
+              },
             ].map(({ href, src, alt }) => (
               <motion.a
                 key={src}
@@ -136,18 +144,34 @@ const Home = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center"
                 variants={{
-                  hidden:  { opacity: 0, y: 24 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+                  hidden: { opacity: 0, y: 24 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.5, ease: "easeOut" },
+                  },
                 }}
               >
-                <img src={src} alt={alt} className="w-20 h-20 md:w-45 md:h-45" />
+                <img
+                  src={src}
+                  alt={alt}
+                  className="w-20 h-20 md:w-50 md:h-50"
+                />
               </motion.a>
             ))}
 
             {/* Last 2 logos — centred below on mobile (col-start-2 = 2nd col, spanning 1 each → centred in 4-col grid) */}
             {[
-              { href: "https://expatlaunch.de/",       src: "/pat8.png", alt: "Expat Launch" },
-              { href: "https://www.linkedin.com/company/gribs-gr%C3%BCnderzentrum-schweinfurt/", src: "/pat5.svg", alt: "Gribs" },
+              {
+                href: "https://expatlaunch.de/",
+                src: "/pat8.png",
+                alt: "Expat Launch",
+              },
+              {
+                href: "https://www.linkedin.com/company/gribs-gr%C3%BCnderzentrum-schweinfurt/",
+                src: "/pat5.svg",
+                alt: "Gribs",
+              },
             ].map(({ href, src, alt }, i) => (
               <motion.a
                 key={src}
@@ -156,11 +180,19 @@ const Home = () => {
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center ${i === 0 ? "col-start-2" : ""}`}
                 variants={{
-                  hidden:  { opacity: 0, y: 24 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+                  hidden: { opacity: 0, y: 24 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.5, ease: "easeOut" },
+                  },
                 }}
               >
-                <img src={src} alt={alt} className="w-20 h-20 md:w-45 md:h-45" />
+                <img
+                  src={src}
+                  alt={alt}
+                  className="w-20 h-20 md:w-45 md:h-45"
+                />
               </motion.a>
             ))}
           </motion.div>
